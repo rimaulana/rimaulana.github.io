@@ -1,0 +1,1971 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Live Kaizen life</title>
+    <link>http://www.riospace.web.id/</link>
+    <description>Recent content on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    
+        <atom:link href="http://www.riospace.web.id/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://www.riospace.web.id/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://www.riospace.web.id/about/</guid>
+      
+        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
+
+&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>IDN Networking Competition 2017 Mikrotik Bridging Challenge Solution Verification</title>
+      <link>http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</link>
+      <pubDate>Fri, 01 Sep 2017 19:06:32 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</guid>
+      
+        <description>
+
+&lt;p&gt;Postingan kali ini adalah lanjutan dari postingan &lt;a href=&#34;https://riospace.web.id/mikrotik-bridging-challenge-solution&#34;&gt;IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution&lt;/a&gt;, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0&lt;/li&gt;
+&lt;li&gt;Qemu-2.4.0 running on Local Windows (64-bit)&lt;/li&gt;
+&lt;li&gt;Mikrotik CHR 6.40.1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Topologi yang saya gunakan adalah sebagai berikut:&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_jakarta_gns3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_jakarta_gns3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)&lt;/p&gt;
+
+&lt;h1 id=&#34;lantai-1&#34;&gt;Lantai 1&lt;/h1&gt;
+
+&lt;p&gt;Pada lantai 1, test yang akan kita lakukan adalah:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;No&lt;/th&gt;
+&lt;th&gt;Check List&lt;/th&gt;
+&lt;th&gt;Tujuan&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Ping dari R-L1 ke Core-JKT&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP dari R-L1 ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;PC1 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 10 di Core-JKT berjalan dan dapat terdistribusi di R-L1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;PC1 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;PC2 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 20 di Core-JKT berjalan dan dapat terdistribusi di R-L1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;PC2 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;PC3 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;PC3 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;Traceroute dari R-L1 ke PC1&lt;/td&gt;
+&lt;td&gt;Verifikasi bahwa default gateway R-L1 bekerja dengan baik untuk koneksi internet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;ping-dari-r-l1-ke-core-jkt&#34;&gt;Ping dari R-L1 ke Core-JKT&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L1] &amp;gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 1ms  
+    3 192.168.99.1                               56  64 1ms  
+    4 192.168.99.1                               56  64 2ms  
+    sent=5 received=5 packet-loss=0% min-rtt=1ms avg-rtt=2ms max-rtt=4ms &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc1-ip-dhcp-request&#34;&gt;PC1 IP DHCP Request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC1&amp;gt; ip dhcp
+DORA IP 192.168.10.254/24 GW 192.168.10.1
+
+PC1&amp;gt; show ip
+NAME        : PC1[1]
+IP/MASK     : 192.168.10.254/24
+GATEWAY     : 192.168.10.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.10.1
+DHCP LEASE  : 462, 600/300/525
+MAC         : 00:50:79:66:68:00
+LPORT       : 10001
+RHOST:PORT  : 192.168.38.1:10013
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc1-ping-ke-gateway&#34;&gt;PC1 Ping  ke Gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC1&amp;gt; ping 192.168.10.1
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=64 time=3.567 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc2-ip-dhcp-request&#34;&gt;PC2 IP DHCP Request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC2&amp;gt; ip dhcp
+DORA IP 192.168.20.252/24 GW 192.168.20.1
+
+PC2&amp;gt; show ip
+NAME        : PC2[1]
+IP/MASK     : 192.168.20.252/24
+GATEWAY     : 192.168.20.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.20.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:03
+LPORT       : 10002
+RHOST:PORT  : 192.168.38.1:10016
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc2-ping-ke-gateway&#34;&gt;PC2 Ping ke Gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC2&amp;gt; ping 192.168.20.1
+84 bytes from 192.168.20.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.20.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.20.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.20.1 icmp_seq=4 ttl=64 time=3.567 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc3-ip-dhcp-request&#34;&gt;PC3 IP DHCP Request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC3&amp;gt; ip dhcp
+DORA IP 192.168.30.254/24 GW 192.168.30.1
+
+PC3&amp;gt; show ip
+NAME        : PC3[1]
+IP/MASK     : 192.168.30.254/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:01
+LPORT       : 10008
+RHOST:PORT  : 192.168.38.1:10034
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc3-ping-ke-gateway&#34;&gt;PC3 Ping ke Gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC3&amp;gt; ping 192.168.10.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=3.567 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;traceroute-dari-r-l1-ke-pc1&#34;&gt;Traceroute dari R-L1 ke PC1&lt;/h2&gt;
+
+&lt;p&gt;Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L1 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L1 untuk membuktikan bahwa default route R-L1 berjalan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L1] &amp;gt; /tool traceroute 192.168.10.254
+# ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+1 192.168.99.1                       0%   17   2.2ms     2.2     1.7     5.1     0.8
+2 192.168.10.254                     0%   17   4.1ms       8     2.9    69.7    15.4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;lantai-2&#34;&gt;LANTAI 2&lt;/h1&gt;
+
+&lt;p&gt;Pada lantai 2, test yang akan kita lakukan adalah:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;No&lt;/th&gt;
+&lt;th&gt;Check List&lt;/th&gt;
+&lt;th&gt;Tujuan&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Ping dari R-L2-1 ke Core-JKT&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP dari R-L2-1 ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;PC4 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 10 di Core-JKT berjalan dan dapat terdistribusi di R-L2-1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;PC4 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;PC5 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 20 di Core-JKT berjalan dan dapat terdistribusi di R-L2-1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;PC5 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Traceroute dari R-L2-1 ke PC1&lt;/td&gt;
+&lt;td&gt;Verifikasi bahwa default gateway R-L2-1 bekerja dengan baik untuk koneksi internet&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Ping dari R-L2-2 ke Core-JKT&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP dari R-L2-2 ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;PC6 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L2-2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;PC6 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;PC7 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 40 di Core-JKT berjalan dan dapat terdistribusi di R-L2-2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;td&gt;PC7 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;Traceroute dari R-L2-2 ke PC1&lt;/td&gt;
+&lt;td&gt;Verifikasi bahwa default gateway R-L2-2 bekerja dengan baik untuk koneksi internet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;ping-dari-r-l2-1-ke-core-jkt&#34;&gt;Ping dari R-L2-1 ke Core-JKT&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L2-1] &amp;gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 1ms  
+    3 192.168.99.1                               56  64 1ms  
+    4 192.168.99.1                               56  64 1ms  
+    sent=5 received=5 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=4ms &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc4-ip-dhcp-request&#34;&gt;PC4 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC4&amp;gt; ip dhcp
+DORA IP 192.168.10.253/24 GW 192.168.10.1
+ 
+PC4&amp;gt; show ip
+NAME        : PC4[1]
+IP/MASK     : 192.168.10.253/24
+GATEWAY     : 192.168.10.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.10.1
+DHCP LEASE  : 591, 600/300/525
+MAC         : 00:50:79:66:68:02
+LPORT       : 10003
+RHOST:PORT  : 192.168.38.1:10019
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc4-ping-ke-gateway&#34;&gt;PC4 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC4&amp;gt; ping 192.168.10.1
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=64 time=3.284 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=64 time=2.883 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=64 time=2.897 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=64 time=2.469 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc5-ip-dhcp-request&#34;&gt;PC5 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC5&amp;gt; ip dhcp
+DORA IP 192.168.20.251/24 GW 192.168.20.1
+ 
+PC5&amp;gt; show ip
+NAME        : PC5[1]
+IP/MASK     : 192.168.20.251/24
+GATEWAY     : 192.168.20.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.20.1
+DHCP LEASE  : 586, 600/300/525
+MAC         : 00:50:79:66:68:04
+LPORT       : 10000
+RHOST:PORT  : 192.168.38.1:10010
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc5-ping-ke-gateway&#34;&gt;PC5 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC5&amp;gt; ping 192.168.20.1
+84 bytes from 192.168.20.1 icmp_seq=1 ttl=64 time=3.758 ms
+84 bytes from 192.168.20.1 icmp_seq=2 ttl=64 time=3.278 ms
+84 bytes from 192.168.20.1 icmp_seq=3 ttl=64 time=2.962 ms
+84 bytes from 192.168.20.1 icmp_seq=4 ttl=64 time=3.118 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;traceroute-dari-r-l2-1-ke-pc1&#34;&gt;Traceroute dari R-L2-1 ke PC1&lt;/h2&gt;
+
+&lt;p&gt;Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L2-1 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L2-1 untuk membuktikan bahwa default route R-L2-1 berjalan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L2-1] &amp;gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+ 1 192.168.99.1                       0%    6     2ms     2.6     1.9     5.5     1.3
+ 2 192.168.10.254                     0%    6   3.5ms    12.8     3.5    54.7    18.8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;ping-dari-r-l2-2-ke-core-jkt&#34;&gt;Ping dari R-L2-2 ke Core-JKT&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L2-2] &amp;gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 5ms  
+    1 192.168.99.1                               56  64 3ms  
+    2 192.168.99.1                               56  64 4ms  
+    3 192.168.99.1                               56  64 3ms  
+    sent=4 received=4 packet-loss=0% min-rtt=3ms avg-rtt=3ms max-rtt=5ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc6-ip-dhcp-request&#34;&gt;PC6 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC6&amp;gt; ip dhcp
+DORA IP 192.168.30.253/24 GW 192.168.30.1
+ 
+PC6&amp;gt; show ip
+NAME        : PC6[1]
+IP/MASK     : 192.168.30.253/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 598, 600/300/525
+MAC         : 00:50:79:66:68:05
+LPORT       : 10004
+RHOST:PORT  : 192.168.38.1:10022
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc6-ping-ke-gateway&#34;&gt;PC6 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC6&amp;gt; ping 192.168.30.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=4.549 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=5.146 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=7.167 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=5.634 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc7-ip-dhcp-request&#34;&gt;PC7 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC7&amp;gt; ip dhcp
+DORA IP 192.168.40.253/24 GW 192.168.40.1
+ 
+PC7&amp;gt; show ip
+NAME        : PC7[1]
+IP/MASK     : 192.168.40.253/24
+GATEWAY     : 192.168.40.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.40.1
+DHCP LEASE  : 598, 600/300/525
+MAC         : 00:50:79:66:68:06
+LPORT       : 10005
+RHOST:PORT  : 192.168.38.1:10025
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc7-ping-ke-gateway&#34;&gt;PC7 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC7&amp;gt; ping 192.168.40.1
+84 bytes from 192.168.40.1 icmp_seq=1 ttl=64 time=5.126 ms
+84 bytes from 192.168.40.1 icmp_seq=2 ttl=64 time=3.970 ms
+84 bytes from 192.168.40.1 icmp_seq=3 ttl=64 time=4.770 ms
+84 bytes from 192.168.40.1 icmp_seq=4 ttl=64 time=6.111 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;traceroute-dari-r-l2-2-ke-pc1&#34;&gt;Traceroute dari R-L2-2 ke PC1&lt;/h2&gt;
+
+&lt;p&gt;Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L2-2 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L1 untuk membuktikan bahwa default route R-L2-2 berjalan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L2-2] &amp;gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS                                                                            
+ 1 192.168.99.1                       0%    6   3.5ms     4.2     3.5     4.7     0.5                                                                                   
+ 2 192.168.10.254                     0%    6   7.2ms     6.5     5.2     7.2     0.7&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;lantai-3&#34;&gt;LANTAI 3&lt;/h1&gt;
+
+&lt;p&gt;Pada lantai 3, test yang akan kita lakukan adalah:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;No&lt;/th&gt;
+&lt;th&gt;Check List&lt;/th&gt;
+&lt;th&gt;Tujuan&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Ping dari R-L3 ke Core-JKT&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP dari R-L3 ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;PC8 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;PC8 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;PC9 IP DHCP request&lt;/td&gt;
+&lt;td&gt;Verikasi apakah DHCP server untuk VLAN 40 di Core-JKT berjalan dan dapat terdistribusi di R-L3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;PC9 ping ke gateway&lt;/td&gt;
+&lt;td&gt;Verifikasi konektifitas IP ke Core-JKT&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;Traceroute dari R-L3 ke PC1    Verifikasi bahwa default gateway R-L3 bekerja dengan baik untuk koneksi internet&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;ping-dari-r-l3-ke-core-jkt&#34;&gt;Ping dari R-L3 ke Core-JKT&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L3] &amp;gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 2ms  
+    3 192.168.99.1                               56  64 1ms  
+    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=2ms max-rtt=4ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc8-ip-dhcp-request&#34;&gt;PC8 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC8&amp;gt; ip dhcp
+DORA IP 192.168.30.252/24 GW 192.168.30.1
+ 
+PC8&amp;gt; show ip
+NAME        : PC8[1]
+IP/MASK     : 192.168.30.252/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:07
+LPORT       : 10006
+RHOST:PORT  : 192.168.38.1:10028
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc8-ping-ke-gateway&#34;&gt;PC8 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC8&amp;gt; ping 192.168.30.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=2.944 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=3.126 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=6.054 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=3.601 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc9-ip-dhcp-request&#34;&gt;PC9 IP DHCP request&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC9&amp;gt; ip dhcp
+DORA IP 192.168.40.252/24 GW 192.168.40.1
+ 
+PC9&amp;gt; show ip
+NAME        : PC9[1]
+IP/MASK     : 192.168.40.252/24
+GATEWAY     : 192.168.40.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.40.1
+DHCP LEASE  : 595, 600/300/525
+MAC         : 00:50:79:66:68:08
+LPORT       : 10007
+RHOST:PORT  : 192.168.38.1:10031
+MTU:        : 1500&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;pc9-ping-ke-gateway&#34;&gt;PC9 ping ke gateway&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;PC9&amp;gt; ping 192.168.40.1
+84 bytes from 192.168.40.1 icmp_seq=1 ttl=64 time=2.776 ms
+84 bytes from 192.168.40.1 icmp_seq=2 ttl=64 time=2.534 ms
+84 bytes from 192.168.40.1 icmp_seq=3 ttl=64 time=2.552 ms
+84 bytes from 192.168.40.1 icmp_seq=4 ttl=64 time=3.132 ms&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;traceroute-dari-r-l3-ke-pc1&#34;&gt;Traceroute dari R-L3 ke PC1&lt;/h2&gt;
+
+&lt;p&gt;Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L3 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L3 untuk membuktikan bahwa default route R-L3 berjalan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;[admin@R-L3] &amp;gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+ 1 192.168.99.1                       0%    5   2.2ms     2.1     1.7     2.5     0.3
+ 2 192.168.10.254                     0%    5   4.3ms     4.8     4.1     5.2     0.5&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Demikian hasil verifikasi dari konfigurasi di IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution. Kalau ada pertanyaan atau kurang jelas, tolong jangan sungkan untuk meninggalkan pertanyaan melalui komentar. Terima kasih.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Mengurutkan Interface Pada Virtualisasi Router Mikrotik Di Qemu</title>
+      <link>http://www.riospace.web.id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</link>
+      <pubDate>Wed, 30 Aug 2017 18:56:51 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</guid>
+      
+        <description>&lt;p&gt;Pastinya kita semua pernah mengalami pada saat sedang konsennya konfig mikrotik dan telah selesai dan yakin 100% konfig kita benar, lalu saat kita coba ping &amp;hellip; . . gagal. destination host unreachable. Mungkin salah satu penyebabnya adalah interface yang kita gunakan adalah bukan interface yang benar. Saya sering mengalami hal ini saat menggunakan GNS3 dengan, bisa dibilang hampir semua virtualisasi (VirtualBox dan Qemu) kecuali VMware. Cara yang mudah untuk melakukan pemeriksaan, bisa kita lihat dari MAC address interface melalui command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface ethernet print&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dimana salah satu contoh outputnya adalah sebagai berikut:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Flags: X - disabled, R - running, S - slave 
+ #    NAME        MTU      MAC-ADDRESS         ARP            
+ 0 R  ether1      1500     00:BB:0E:E7:AE:01   enabled        
+ 1 R  ether2      1500     00:BB:0E:E7:AE:02   enabled        
+ 2 R  ether3      1500     00:BB:0E:E7:AE:03   enabled        
+ 3 R  ether4      1500     00:BB:0E:E7:AE:04   enabled        
+ 4 R  ether5      1500     00:BB:0E:E7:AE:05   enabled        
+ 5 R  ether6      1500     00:BB:0E:E7:AE:06   enabled        
+ 6 R  ether7      1500     00:BB:0E:E7:AE:07   enabled        
+ 7 R  ether8      1500     00:BB:0E:E7:AE:00   enabled&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Contoh diatas saya dapatkan dari VM mikrotik yang berjalan diatas Qemu. Pada umumnya, untuk virtualisasi menggunakan Qemu nomor MAC address selalu urut dari 00 hinggi NN, sehingga dengan assumsi tersebut, hasil output diatas menyatakan bahwa urutan interface pada router tersebut tidak urut dan perlu dibenahi. Seharusnya urutannya adalah:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Interface&lt;/th&gt;
+&lt;th&gt;MAC Address&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ether1&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:00&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ether2&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:01&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ether3&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:02&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ether4&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:03&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ether5&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:04&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ether6&lt;/td&gt;
+&lt;td&gt;00:BB:0E:E7:AE:06&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Untuk memudahkan pengurutan interface berasarkan MAC address kita bisa menggunakan command yang mana kita akan mengganti nama interface dengan nama yang lain kemudian kita ganti kembali nama interface sesuai dengan penamaan mikrotik, yakni etherX. Mengapa demikian? karena jika kita langsung mengganti nama interface menjadi etherX, bisa jadi nama tersebut sudah ada dan proses penggantian nama interface tersebut akan gagal. Command yang biasa saya gunakan adalah:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface ethernet 
+set [find mac-address=AA:BB:CC:DD:EE:00] name=ethernet1
+set [find mac-address=AA:BB:CC:DD:EE:01] name=ethernet2
+set [find mac-address=AA:BB:CC:DD:EE:02] name=ethernet3
+set [find mac-address=AA:BB:CC:DD:EE:03] name=ethernet4
+set [find mac-address=AA:BB:CC:DD:EE:04] name=ethernet5
+set [find mac-address=AA:BB:CC:DD:EE:05] name=ethernet6
+set [find mac-address=AA:BB:CC:DD:EE:06] name=ethernet7
+set [find mac-address=AA:BB:CC:DD:EE:07] name=ethernet8
+set [find mac-address=AA:BB:CC:DD:EE:00] name=ether1
+set [find mac-address=AA:BB:CC:DD:EE:01] name=ether2
+set [find mac-address=AA:BB:CC:DD:EE:02] name=ether3
+set [find mac-address=AA:BB:CC:DD:EE:03] name=ether4
+set [find mac-address=AA:BB:CC:DD:EE:04] name=ether5
+set [find mac-address=AA:BB:CC:DD:EE:05] name=ether6
+set [find mac-address=AA:BB:CC:DD:EE:06] name=ether7
+set [find mac-address=AA:BB:CC:DD:EE:07] name=ether8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kita bisa dengan mudah mereplace (biasanya tekan ctrl+h) semua &lt;strong&gt;AA:BB:CC:DD:EE&lt;/strong&gt; dengan prefix dari MAC address router, mengacu contoh diatas prefix MAC addressnya adalah &lt;strong&gt;00:BB:0E:E7:AE.&lt;/strong&gt; Setelah selesai maka kita akan mendapati MAC address kita akan urut sesuai penomoran di tabel&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Flags: X - disabled, R - running, S - slave 
+ #    NAME        MTU      MAC-ADDRESS         ARP            
+ 0 R  ether1      1500     00:BB:0E:E7:AE:00   enabled        
+ 1 R  ether2      1500     00:BB:0E:E7:AE:01   enabled        
+ 2 R  ether3      1500     00:BB:0E:E7:AE:02   enabled        
+ 3 R  ether4      1500     00:BB:0E:E7:AE:03   enabled        
+ 4 R  ether5      1500     00:BB:0E:E7:AE:04   enabled        
+ 5 R  ether6      1500     00:BB:0E:E7:AE:05   enabled        
+ 6 R  ether7      1500     00:BB:0E:E7:AE:06   enabled        
+ 7 R  ether8      1500     00:BB:0E:E7:AE:07   enabled&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Selamat mencoba dan jangan sungkan untuk meninggalkan pesan apabila ada pertanyaan. Terima Kasih.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Mikrotik Bridging Challenge Solution</title>
+      <link>http://www.riospace.web.id/mikrotik-bridging-challenge-solution/</link>
+      <pubDate>Fri, 25 Aug 2017 16:03:29 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/mikrotik-bridging-challenge-solution/</guid>
+      
+        <description>
+
+&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      info
+    
+  &lt;/div&gt;
+  &lt;p&gt;Sebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial &lt;a href=&#34;http://www.riospace.web.id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/&#34;&gt;Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu&lt;/a&gt; untuk memastikannya&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link &lt;a href=&#34;idn_networking_2017_mikrotik_superlab.pdf&#34;&gt;berikut&lt;/a&gt;. Untuk soal bridging (no 2 s/d 6), kita akan fokus pada topologi jaringan di kantor pusat Jakarta. Adapun topologinya adalah sebagai berikut.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_topology_soal.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_topology_soal.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Kantor pusat Jakarta juga memiliki informasi VLAN sebagai berikut:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;VLAN ID&lt;/th&gt;
+&lt;th&gt;Network&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;192.168.10.0/24&lt;/td&gt;
+&lt;td&gt;Guest&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;192.168.20.0/24&lt;/td&gt;
+&lt;td&gt;Karyawan&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;192.168.30.0/24&lt;/td&gt;
+&lt;td&gt;Admin&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;192.168.40.0/24&lt;/td&gt;
+&lt;td&gt;Network Admin&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;192.168.99.0/24&lt;/td&gt;
+&lt;td&gt;Management&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Pendekatan yang saya paparkan dalam panduan ini belum tentu solusi yang paling baik namun saya berusaha mengikuti standar penamaan yang di jelaskan di manual yang berada di website mikrotik. Maka dari itu logical topology yang saya propose adalah sebagai berikut:&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_topology_logical.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_topology_logical.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Dari topologi diatas dapat kita lihat bahwa semua VLAN bermuara ke router Core-JKT melalui path yang jelas dari ujung ke ujung. Sebagai contoh untuk VLAN 99 dari R-L2-2 dapat menuju ke Core-JKT dikarenakan ada path yang berkelanjutan dari R-L2-2 ke Core-JKT melaui R-L2-1 (dapat dilihat dari path warna hitam). Selanjutnya mari kita masuk ke tiap-tiap router untuk membedah konfigurasi yang perlu kita set di tiap router.&lt;/p&gt;
+
+&lt;h1 id=&#34;core-jkt&#34;&gt;Core-JKT&lt;/h1&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_core-jkt.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_core-jkt.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Core-JKT sebagai pusat dari semua router yang ada di kantor Jakarta harus memiliki semua konfigurasi VLAN yang ada di kantor Jakarta, dari gambar di atas, dapat kita simpulkan bahwa untuk Core-JKT kita perlu mengkonfigurasi router dengan membuat bridge and VLAN sebagai berikut:&lt;/p&gt;
+
+&lt;div style=&#34;overflow-x: auto;&#34;&gt;
+&lt;table border=&#34;0&#34; cellspacing=&#34;0&#34; cellpadding=&#34;0&#34; align=&#34;center&#34;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;Bridge&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;bridge-vlan10&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;bridge-vlan20&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;bridge-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;bridge-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether3&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&lt;strong&gt;ether3-vlan10&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #008000;&#34;&gt;&lt;strong&gt;ether3-vlan20&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;&lt;strong&gt;ether3-vlan30&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ether3-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether4&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&lt;strong&gt;ether4-vlan10&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #008000;&#34;&gt;&lt;strong&gt;ether4-vlan20&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;&lt;strong&gt;ether4-vlan30&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;&lt;strong&gt;ether4-vlan40&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ether4-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether5&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;&lt;strong&gt;ether5-vlan30&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;&lt;strong&gt;ether5-vlan40&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ether5-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+/interface vlan
+add interface=ether3 name=ether3-vlan10 vlan-id=10
+add interface=ether3 name=ether3-vlan20 vlan-id=20
+add interface=ether3 name=ether3-vlan30 vlan-id=30
+add interface=ether3 name=ether3-vlan99 vlan-id=99
+add interface=ether4 name=ether4-vlan10 vlan-id=10
+add interface=ether4 name=ether4-vlan20 vlan-id=20
+add interface=ether4 name=ether4-vlan30 vlan-id=30
+add interface=ether4 name=ether4-vlan40 vlan-id=40
+add interface=ether4 name=ether4-vlan99 vlan-id=99
+add interface=ether5 name=ether5-vlan30 vlan-id=30
+add interface=ether5 name=ether5-vlan40 vlan-id=40
+add interface=ether5 name=ether5-vlan99 vlan-id=99
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether3-vlan10
+add bridge=bridge-vlan10 interface=ether4-vlan10
+add bridge=bridge-vlan20 interface=ether3-vlan20
+add bridge=bridge-vlan20 interface=ether4-vlan20
+add bridge=bridge-vlan30 interface=ether3-vlan30
+add bridge=bridge-vlan30 interface=ether4-vlan30
+add bridge=bridge-vlan30 interface=ether5-vlan30
+add bridge=bridge-vlan40 interface=ether4-vlan40
+add bridge=bridge-vlan40 interface=ether5-vlan40
+add bridge=bridge-vlan99 interface=ether3-vlan99
+add bridge=bridge-vlan99 interface=ether4-vlan99
+add bridge=bridge-vlan99 interface=ether5-vlan99&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Jangan lupa untuk konfigurasi IP address serta DHCP server di Core-JKT adalah sebagai berikut&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/ip address
+add address=192.168.10.1/24 interface=bridge-vlan10 network=192.168.10.0
+add address=192.168.20.1/24 interface=bridge-vlan20 network=192.168.20.0
+add address=192.168.30.1/24 interface=bridge-vlan30 network=192.168.30.0
+add address=192.168.40.1/24 interface=bridge-vlan40 network=192.168.40.0
+add address=192.168.99.1/24 interface=bridge-vlan99 network=192.168.99.0
+/ip pool
+add name=dhcp_pool_vlan_10 ranges=192.168.10.10-192.168.10.254
+add name=dhcp_pool_vlan_20 ranges=192.168.20.10-192.168.20.254
+add name=dhcp_pool_vlan_30 ranges=192.168.30.10-192.168.30.254
+add name=dhcp_pool_vlan_40 ranges=192.168.40.10-192.168.40.254
+/ip dhcp-server
+add address-pool=dhcp_pool_vlan_10 disabled=no interface=bridge-vlan10 name=dhcp_vlan_10
+add address-pool=dhcp_pool_vlan_20 disabled=no interface=bridge-vlan20 name=dhcp_vlan_20
+add address-pool=dhcp_pool_vlan_30 disabled=no interface=bridge-vlan30 name=dhcp_vlan_30
+add address-pool=dhcp_pool_vlan_40 disabled=no interface=bridge-vlan40 name=dhcp_vlan_40
+/ip dhcp-server network
+add address=192.168.10.0/24 gateway=192.168.10.1 dns-server=8.8.8.8
+add address=192.168.20.0/24 gateway=192.168.20.1 dns-server=8.8.8.8
+add address=192.168.30.0/24 gateway=192.168.30.1 dns-server=8.8.8.8
+add address=192.168.40.0/24 gateway=192.168.40.1 dns-server=8.8.8.8&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;r-l1&#34;&gt;R-L1&lt;/h1&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_r-l1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_r-l1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Untuk R-L1 dapat kita lihat dari diagram diatas, bahwa untuk R-L1 perlu memiliki konfigurasi untuk 4 VLAN yakni VLAN 10, 20, 30 dan 99 dan untuk dapat berkomunikasi dengan pusat Core-JKT, jalan satu satunya adalah melalui interface ether1 sehingga kita perlu membuat semua konfigurasi vlan di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing sebagai berikut:&lt;/p&gt;
+
+&lt;div style=&#34;overflow-x: auto;&#34;&gt;
+&lt;table border=&#34;0&#34; cellspacing=&#34;0&#34; cellpadding=&#34;0&#34; align=&#34;center&#34;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;Bridge&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;bridge-vlan10&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;bridge-vlan20&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;bridge-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;bridge-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether1&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;ether1-vlan10&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;ether1-vlan20&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;ether1-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;ether1-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan10 vlan-id=10
+add interface=ether1 name=ether1-vlan20 vlan-id=20
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether1-vlan10
+add bridge=bridge-vlan20 interface=ether1-vlan20
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Selanjutnya adalah konfigurasi ether2, ether3 dan ether4 dimana sesuai dengan topologi dari soal:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ether2 adalah bagian dari VLAN 10&lt;/li&gt;
+&lt;li&gt;ether3 adalah bagian dari VLAN 20&lt;/li&gt;
+&lt;li&gt;ether4 adalah bagian dari VLAN 30&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge port
+add bridge=bridge-vlan10 interface=ether2
+add bridge=bridge-vlan20 interface=ether3
+add bridge=bridge-vlan30 interface=ether4&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Jangan lupa juga untuk konfigurasi R-L1 management IP addresss serta default route supaya dapat terhubung ke internet&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/ip address
+add address=192.168.99.2/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;r-l2-1&#34;&gt;R-L2-1&lt;/h1&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_r-l2-1.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_r-l2-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Untuk R-L2-1 dapat kita lihat dari diagram diatas, bahwa untuk R-L2-1 perlu memiliki konfigurasi untuk ke 5 VLAN meskipun host yang terhubung secara langsung ke R-L2-1 hanya masuk kedalam VLAN 10 dan 20. Namun, R-L2-1 menjadi transit dari VLAN yang berada di R-L2-2 untuk dapat berkomunikasi dengan pusat di Core-JKT, Maka dari itu ether3 sebagai penghubung dari R-L2-2 ke R-L2-1, harus memiliki konfigurasi VLAN yang berada di R-L2-2. Sedangkan supaya R-L2-1 dapat berkomunikasi dengan pusat Core-JKT, semua VLAN akan melalui ether1, sehingga kita perlu membuat semua konfigurasi VLAN di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing. Perencanaanya adalah sebagai berikut:&lt;/p&gt;
+
+&lt;div style=&#34;overflow-x: auto;&#34;&gt;
+&lt;table border=&#34;0&#34; cellspacing=&#34;0&#34; cellpadding=&#34;0&#34; align=&#34;center&#34;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;Bridge&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;bridge-vlan10&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #008000;&#34;&gt;bridge-vlan20&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;bridge-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;bridge-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether1&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&lt;strong&gt;ether1-vlan10&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #008000;&#34;&gt;&lt;strong&gt;ether1-vlan20&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;&lt;strong&gt;ether1-vlan30&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;&lt;strong&gt;ether1-vlan40&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ether1-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether3&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;&lt;strong&gt;ether3-vlan30&lt;/strong&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;ether3-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ether3-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan10 vlan-id=10
+add interface=ether1 name=ether1-vlan20 vlan-id=20
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+add interface=ether3 name=ether3-vlan30 vlan-id=30 
+add interface=ether3 name=ether3-vlan40 vlan-id=40 
+add interface=ether3 name=ether3-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether1-vlan10
+add bridge=bridge-vlan20 interface=ether1-vlan20
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99
+add bridge=bridge-vlan30 interface=ether3-vlan30 
+add bridge=bridge-vlan40 interface=ether3-vlan40 
+add bridge=bridge-vlan99 interface=ether3-vlan99&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Selanjutnya adalah konfigurasi ether2 dan ether3 dimana sesuai dengan topologi dari soal:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ether2 adalah bagian dari VLAN 10&lt;/li&gt;
+&lt;li&gt;ether3 adalah bagian dari VLAN 20&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge port
+add bridge=bridge-vlan10 interface=ether2
+add bridge=bridge-vlan20 interface=ether3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Jangan lupa juga untuk konfigurasi R-L2-1 management IP addresss serta default route supaya dapat terhubung ke internet&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/ip address
+add address=192.168.99.3/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;r2-l2-2&#34;&gt;R2-L2-2&lt;/h1&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_r-l2-2.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_r-l2-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Seperti yang kita lihat dari diagram diatas, bahwa untuk R-L2-2 perlu memiliki konfigurasi untuk 3 VLAN yakni VLAN 30, 40 dan 99 dan untuk dapat berkomunikasi dengan Core-JKT melalui R-L2-1, jalan yang ditempuh adalah melalui interface ether1 sehingga kita perlu membuat semua konfigurasi vlan di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing sebagai berikut:&lt;/p&gt;
+
+&lt;div style=&#34;overflow-x: auto;&#34;&gt;
+&lt;table border=&#34;0&#34; cellspacing=&#34;0&#34; cellpadding=&#34;0&#34; align=&#34;center&#34;&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;Bridge&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;bridge-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;bridge-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td valign=&#34;top&#34; align=&#34;center&#34;&gt;&lt;strong&gt;ether1&lt;/strong&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff9900;&#34;&gt;ether1-vlan30&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;&lt;span style=&#34;color: #ff00ff;&#34;&gt;ether1-vlan40&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;bridge-vlan99&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Selanjutnya adalah konfigurasi ether2 dan ether3 dimana sesuai dengan topologi dari soal:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ether2 adalah bagian dari VLAN 30&lt;/li&gt;
+&lt;li&gt;ether3 adalah bagian dari VLAN 40&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/interface bridge port
+add bridge=bridge-vlan30 interface=ether2
+add bridge=bridge-vlan40 interface=ether3&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Jangan lupa juga untuk konfigurasi R-L2-2 management IP addresss serta default route supaya dapat terhubung ke internet&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/ip address
+add address=192.168.99.4/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&#34;r-l3&#34;&gt;R-L3&lt;/h1&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;idn_networking_2017_mikrotik_r-l3.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;idn_networking_2017_mikrotik_r-l3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Untuk R-L3 memiliki konfigurasi yang sama dengan R-L2-2, sehingga konfigurasi R-L2-2 untuk bridging dan VLAN dapat diaplikasikan ke R-L3. Namun, untuk konfigurasi IP management harus kita sesuaikan, yakni:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;/ip address 
+add address=192.168.99.5/24 interface=bridge-vlan99 network=192.168.99.0 
+ 
+/ip route 
+add distance=1 gateway=192.168.99.1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Selanjutnya untuk tahap verifikasi konfigurasi di atas kamu bisa baca di postingan selanjutnya &lt;a href=&#34;http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/&#34;&gt;IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification&lt;/a&gt;. Kalau ada pertanyaan atau kurang jelas, tolong jangan sungkan untuk meninggalkan pertanyaan melalui komentar. Terima kasih.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Accessing Amazon Web Service MySQL Database Using PhpMyAdmin</title>
+      <link>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
+      <pubDate>Fri, 03 Oct 2014 07:28:34 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
+      
+        <description>&lt;p&gt;Amazon Web Service currently offers one-year-free trial of their services and I am experimenting with their database service. I set up a MySQL server database. However, after the service was ready, I found out that, AWS doesn”t provide GUI to access the database. I always use phpMyAdmin to manage MySQL database because it is easy and thinking whether I could use phpMyAdmin to manage my AWS database or not. After a quick research on the Internet, I found out that it is possible. How could we do that?&lt;/p&gt;
+
+&lt;p&gt;First, we need to install phpMyAdmin. The good thing about phpMyAdmin is it is a web application, doesn”t matter the type of Operating System you have as long as it has web server to host phpMyAdmin you are set. Second you need to modify phpMyAdmin configuration file by adding few lines on it. The file that you need to modify is config.inc.php. Different OS has different location for this file. I used Ubuntu 14.04 and Windows 7 &lt;a href=&#34;https://www.apachefriends.org/index.html&#34;&gt;XAMPP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 14.04 –&amp;gt; &lt;em&gt;/etc/phpmyadmin&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Windows 7 &lt;a href=&#34;https://www.apachefriends.org/index.html&#34;&gt;XAMPP&lt;/a&gt; –&amp;gt; &lt;em&gt;\xampp\phpMyAdmin&lt;/em&gt; (relative to your xampp root document by default it is in C:)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Add these following lines inside the php tag of &lt;em&gt;config.inc.php&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;hl&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;hl&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;hl&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;hl&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;/*You need the following line define the next server configuration.
+If you find this at the end of your configuration you don&amp;#34;t need to add it*/
+&lt;span class=&#34;hl&#34;&gt;$i ;
+&lt;/span&gt;/*This line is optional. It is used to name your connection*/
+&lt;span class=&#34;hl&#34;&gt;$cfg[&amp;#34;Servers&amp;#34;][$i][&amp;#34;verbose&amp;#34;] = &amp;#34;Amazon Web Service&amp;#34;;
+&lt;/span&gt;/*Defining authentication type*/
+&lt;span class=&#34;hl&#34;&gt;$cfg[&amp;#34;Servers&amp;#34;][$i][&amp;#34;auth_type&amp;#34;] = &amp;#34;HTTP&amp;#34;;
+&lt;/span&gt;/*Fill in the host with your AWS instance endpoint information*/
+&lt;span class=&#34;hl&#34;&gt;$cfg[&amp;#34;Servers&amp;#34;][$i][&amp;#34;host&amp;#34;] = &amp;#34;xxxxxxx.cnbvmxbgsmon.us-west-2.rds.amazonaws.com&amp;#34;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+Once you added those lines, save the changes and you are all set. Now run your phpMyAdmin page from your browser and you will start seeing drop down menu of server options you wish to connect to like the figure below.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;phpmyadmin-login-page.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;phpmyadmin-login-page.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+</description>
+      
+    </item>
+    
+    <item>
+      <title>QAM Modulation Technique Concept Challenges and Solutions</title>
+      <link>http://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</link>
+      <pubDate>Thu, 23 Jan 2014 14:33:45 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</guid>
+      
+        <description>
+
+&lt;p&gt;The new 802.11ac standard from IEEE, is currently penetrating wireless network markets with its new features and technology. Watson (2013), Public Marketing of Meru Networks, claims the 802.11ac standard will be able to provide a maximum client data rate per radio of 1.3 Gbps. How does it manage to achieve those higher bandwidths compared to the last standard? One part of this technology that makes it possible is the complex modulation technique that 802.11ac employs which is 256-QAM. This modulation technique is a combination of phase-shift keying and amplitude-shift keying. QAM itself stands for quadrature amplitude modulation. In order to understand how 256-QAM could give higher bandwidth we need to know how QAM works.&lt;/p&gt;
+
+&lt;p&gt;The QAM works by modifying either amplitude, phase or both. For example in 4-QAM (commonly known as QPSK) the only attribute which is modified is the signal phase. Thus, it gives four combinations which are 00, 01, 10, 11 or we can say each wave can carry 2 bits.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://lh6.googleusercontent.com/zafLOgZcrP1xKxWyLXkrkHqcRb9Tfanh8z2BJG3CANCx_5GK5S769OpcJLCs2DEltKbmyGohkS8z7jwqkZTHd9TIvbNSNAdh52IAwyflvgYPH9F_e_qLZaaJPQ&#34; alt=&#34;4-QAM constellation map&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://lh6.googleusercontent.com/zafLOgZcrP1xKxWyLXkrkHqcRb9Tfanh8z2BJG3CANCx_5GK5S769OpcJLCs2DEltKbmyGohkS8z7jwqkZTHd9TIvbNSNAdh52IAwyflvgYPH9F_e_qLZaaJPQ&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;4-QAM constellation map&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;As we can see from the figure above, it has the same amplitude (one circle) but four different phases. Meanwhile in 16-QAM, it modifies both amplitude and phase that will result in 16 combinations. this means that each wave can carry 4 bits.$$2^4 = 16$$By increasing the complexity of phase-amplitude combinations, it will also increase the number of bit it carries. Since 802.11ac employ 256-QAM, it means that each wave could carry 8 bits.$$2^8 = 256$$which is faster than 16-QAM.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://lh4.googleusercontent.com/CmVJjZQPt6ZVJM5q8p21aB8UUMxMECd1XBF0xHh213MggOZdzbnYkCknqFUXXioCPbHc-OcCiwi7WAbLpkGv_YRfi080fsbGLdAlj3sR8Wihy515ANIhfeZm7g&#34; alt=&#34;16-QAM constellation map&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://lh4.googleusercontent.com/CmVJjZQPt6ZVJM5q8p21aB8UUMxMECd1XBF0xHh213MggOZdzbnYkCknqFUXXioCPbHc-OcCiwi7WAbLpkGv_YRfi080fsbGLdAlj3sR8Wihy515ANIhfeZm7g&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;16-QAM constellation map&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;This means that the higher the modulation the better the carrier signal is since it can carry more bits. Ian (n.d.) explained that the more complex the modulation degree is the less resilient the signal will be to noise and interference. This is true because in higher levels of modulation, signal is packed and the boundary between one amplitude or phase with another is very small and little interference might cause the receiver to misinterpret the signal. However this problem can be easily overcome by increasing the power of signal which means increasing the amplitude so it will enlarge the boundary between amplitude and phase which in turn will make the signal more resilient. However this solution also brings a disadvantage; since we increase the power of the signal it means that we will need a lot more power for transmitting the signal. By doing that it will drain the battery power quickly if it were to be used in mobile devices such as smart phones or laptops.&lt;/p&gt;
+
+&lt;p&gt;Ian (n.d.) explained another method to address the problem by using dynamic adaptive modulation, which is provided in most recent wireless devices. This type of system will examine the surrounding wireless environment to decide the type of modulation it must use to send the data. If it is possible to use the highest modulation, it will. If there are too many noises and interference the transmitter will then use a lower modulation that is more resilient to send the data.&lt;/p&gt;
+
+&lt;p&gt;In summary, 802.11ac is the network standard that will bring wireless networks to the next level, but in its development it has faced many challenges since it uses higher level modulation 256-QAM. It has to be able to maintain the signal resilience against noise and interference as well as maintaining power usage as minimally as possible. There are also other features of 802.11ac which is not covered in this writing that can address problem described above. The resource is a good start to gain more information about other 802.11ac features.&lt;/p&gt;
+
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Poole, Ian. (n.d.). Comparison of 8-QAM, 16-QAM, 32-QAM, 64-QAM 128-QAM, 256-QAM, etc. Retrieved from &lt;a href=&#34;http://www.radio-electronics.com/info/rf-technology-design/pm-phase-modulation/8qam-16qam-32qam-64qam-128qam-256qam.php&#34;&gt;http://www.radio-electronics.com/info/rf-technology-design/pm-phase-modulation/8qam-16qam-32qam-64qam-128qam-256qam.php&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The New 802.11ac Standard: 256-QAM Explained [Video file]. Retrieved from &lt;a href=&#34;http://www.youtube.com/watch?v=NbrRGBRk5fM&#34;&gt;http://www.youtube.com/watch?v=NbrRGBRk5fM&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Watson, Richard. (2013, July). Understanding the IEEE 802.11ac Wi-Fi standard: preparing for the next gen of WLAN. Retrieved from &lt;a href=&#34;http://www.merunetworks.com/collateral/white-papers/wp-ieee-802-11ac-understanding-en&#34;&gt;http://www.merunetworks.com/collateral/white-papers/wp-ieee-802-11ac-understanding-en&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>My First Stargazing Report</title>
+      <link>http://www.riospace.web.id/my-first-stargazing-report/</link>
+      <pubDate>Tue, 07 Jan 2014 16:29:17 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/my-first-stargazing-report/</guid>
+      
+        <description>&lt;p&gt;Well, actually I stargazed before, but I didn&amp;rsquo;t do that to really observe stars and constellations. This time was my first time stargazing as a beginner in Astronomy (learning Astronomy is part of my new year resolutions). It was Monday Night, January the 6th of 2014. I started to stargaze around EST 9.00 pm until 10.00 pm. It was cold in Syracuse since the temperature was -12 degree of Celsius, and the wind, that made the weather colder, blew with the speed of 50 kph.After days of studying the book that I just got (&lt;a href=&#34;https://www.goodreads.com/book/show/104139.Nightwatch&#34;&gt;Nightwatch&lt;/a&gt;), hours of constellation and stars reading from simulation software called &lt;a href=&#34;http://stellarium.org/&#34;&gt;Stellarium&lt;/a&gt; and days of cloudy night, I got my chance to try my newly acquired skill because Syracuse&amp;rsquo;s sky was very clear that night.&lt;/p&gt;
+
+&lt;p&gt;The first object I recognized that night was the belt of the great hunter Orion which consist of three aligned stars. Alnitak, Alnilam and Mintaka. Those three stars were named by Moslem&amp;rsquo;s astronomer, Alnitak and Mintaka means the belt while Alnilam means the arrangement or pearl. The name is pretty beautiful isn&amp;rsquo;t it? it is like a real belt which its arrangement (Alnilam) located in the middle of the belt (Alnitak and Mintaka). Alnitak and Alnilam are first magnitude stars (the lower the number, the brighter the star) while Mintak is a second magnitude star. After recognizing the belt it was easy to spot the other low-magnitude stars of Orion Constellation. They are Betelgeuse, Bellatrix, Rigel and Saiph. All have Arabic name except Bellatrix which was taken from Latin word that means the warrioress. Bellatrix is a first magnitude star so it was easy to see it. Next is Betelgeuse, the mighty one or the armpit in Arabic. This zero magnitude star is easy to recognize since its yellowish color is distinguishable from other member of Orion constellation. Coming next is Rigel the foot. It is a zero magnitude star which is 770 light-years distant from the earth but produces energy 50000 time than our sun which make it as the brightest star in Orion constellation. The last but not least is Saiph the sword. This star was dim since it was located near horizon which is polluted by houses light. Saiph is a second magnitude star like Mintaka.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;orion_constellation.png&#34; alt=&#34;Orion constellation&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;orion_constellation.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Orion constellation&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;After finding the great hunter Orion. It was quite easy to find other zero and first magnitude stars. Like Aldebaran (the follower) the brightest star in Taurus constellation. Since the other member of Taurus are third or fourth magnitude stars, I wasn&amp;rsquo;t able to see it clearly because of the light pollution from the neighborhood. Not far to the up right of Aldebaran, Pleiades (the seven sister) stars cluster looked quite dim but still visible. Sirius, the brightest of Canis Mayor and its companion Mirzam can also be spotted but the rest was unclear. The twins of Gemini constellation Pollux and Castor was very clear but at first I wasn&amp;rsquo;t sure because there was a bright and star-like object inside Castor-Pollux-Alhena triangle. After I confirmed it with &lt;a href=&#34;http://stellarium.org/&#34;&gt;Stellarium&lt;/a&gt;, I found out that it was Jupiter. It shone like a zero magnitude star with white and yellowish glitter color. I was able to spot the brightest in Canis Minor, Procyon  but wasn&amp;rsquo;t able to see Gomeisa, the other member of Canis Mayor since it is a third magnitude star.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;gemini_constellation.png&#34; alt=&#34;Gemini constellation&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;gemini_constellation.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Gemini constellation&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;The next thing I was curious about is the legendary star that will not move from its place although the earth is rotating. It is Polaris the north star. In order to find Polaris, it is easier for me to find the Big Dipper first. Big Dipper is a star formation part of Ursa Mayor constellation. It was quite hard tho find the Big Dipper because in winter around that time, Big Dipper is close to horizon which was obscured by trees and houses and I have to move places in order to locate it in the north sky, but once Big Dipper was spotted, I was able to locate Polaris the legendary north star.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;big_dipper_and_polaris.png&#34; alt=&#34;Big Dipper and Polaris&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;big_dipper_and_polaris.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Big Dipper and Polaris&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;By using Big Dipper and Polaris, enabled me to locate other constellation such as the Queen of the sky Cassiopeia. Capella the brightest start in Auriga can also be seen with the other member of pentagon-like Auriga constellation member. Unfortunately, the Queen Cassiopeia&amp;rsquo;s king, Cepheus was a little bit shy that night so I didn&amp;rsquo;t see maybe it was because the moon was too bright so it over-light Cepheus which mostly consist of  third magnitude stars. The only start I saw from Cepheus was the brightest Alderamin.&lt;/p&gt;
+
+&lt;p&gt;Well, That was my first time observing star and constellation. Although it was cold and windy but identifying star constellations like our ancestors did long time ago to help them navigating and farming was amazing.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Berjebraw Forefathers Chord</title>
+      <link>http://www.riospace.web.id/berjebraw-forefathers-chord/</link>
+      <pubDate>Mon, 21 Oct 2013 12:46:05 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/berjebraw-forefathers-chord/</guid>
+      
+        <description>&lt;iframe width=&#34;100%&#34; height=&#34;150&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; allow=&#34;autoplay&#34; src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56495489&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This song was written by Petra G Michael a.k.a Berjebraw. I got to listen to the song yesterday and decided to write the chord. The first time I heard this sing song. I felt like my soul was shaken. Here is the song and the chord&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Tuning: Standard EADGBe
+LEGEND
+ E   C#    A    B   F#   G#   Eb
+e|----0----0----0----0----0----0----0----|
+B|----0----0----0----0----0----0----0----|
+G|----9----6----2----4----4----4----9----|
+D|----9----6----2----4----4----6----9----|
+A|----7----4----0----2----4----6----6----|
+E|------------------------2----0---------|
+Intro : E
+E                             Eb             E
+Look at what the forefathers left for us
+ Eb            E
+Can you feel the spirit moving accordingly
+ Eb
+One thing I realize about this day
+ C#               B
+Oh, have we learned a thing or two
+ A            B
+From what our forefathers left
+ E               C#
+Have we learned, have we learned
+ F#                                    E
+Have we learned, have we learned from our forefathers
+ E               C#
+Have we changed, have we changed
+ F#              G#             A
+Have we learned, have we learned from the past
+E                                   F#
+Yesterday was that you learned
+ A
+Tomorrow is that for us to dream
+ E
+And today is that for us to live our life
+ E                         F#
+To change for the better, to change for the better
+ A
+To change for the better, to change for the better
+ E
+To change for the better
+&amp;lt;p&amp;gt; E               C#
+have we learned, have we learned
+ F#                                    E
+have we learned, have we learned from our forefathers
+ E               C#
+have we changed, have we changed
+ F#              G#                 A
+have we learned, have we learned, have we Learned
+ F#      G#                     A
+have we learneeeeeeeed, from our forefathers
+ E
+a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Pie a Professor</title>
+      <link>http://www.riospace.web.id/pie-a-professor/</link>
+      <pubDate>Thu, 17 Oct 2013 12:40:45 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/pie-a-professor/</guid>
+      
+        <description>&lt;p&gt;Today, I saw a strange event in my school. Staffs in iSchool Syracuse University were raising money to be donated for United Way. What they did was providing a booth were people can throw pie to iSchool’s professors face. The price is $5 for student and $10 for faculty, but if you only have $3, they&amp;rsquo;ll take it anyway. I was also offered to throw pie on professor face, but I refused it is not because I didn’t have money, but I think that is not appropriate. I believe that in Asian&amp;rsquo;s culture especially Indonesian, in order to success, student must respect their teacher. Although, even if we (student) are angry to our professor when they gave/asked to much on our assignment or research and gave us a hard exam; all of them are for our own good (I used to be a teacher and also my father is a teacher too). Therefore, we shouldn’t hold any hatred to them. Moreover, throwing a pie in their face to let the hatred out is just not right. In my opinion , that&amp;rsquo;s like organizing prostitution for charity. Do you think that&amp;rsquo;s right? Why I compare it with prostitution? because they are the same in term of selling their honor. That&amp;rsquo;s just what came up in my mind where I saw it. Here are some videos that I took. I would like to hear your opinion as well.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/LAJ0objQai8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/AlV6vYdC-yQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Mountain Biking in Syracuse</title>
+      <link>http://www.riospace.web.id/mountain-biking-in-syracuse/</link>
+      <pubDate>Mon, 23 Sep 2013 12:26:24 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/mountain-biking-in-syracuse/</guid>
+      
+        <description>&lt;p&gt;Today I went for Mountain Biking trip which is organized by SUOC. I&amp;rsquo;ve done mountain biking when I was in Indonesia almost every weekend. At first I was wondering where can I have good trails for mountain biking in Syracuse. The area is located near Syracuse University south campus. To give you better sense of direction, look at the map below.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://www.google.com/maps/d/embed?mid=1WBCHrZTsfvuDYvmnz0n7n-eWB40&#34; width=&#34;100%&#34; height=&#34;400&#34;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I don&amp;rsquo;t have a decent bike for mountain biking and never go for mountain biking with complete equipment but this time was different. We started our trip at 11.00 am. We met in SUOC E-room to get the bikes and other equipment such as helmet, spare inner tube, hand pump and etc.(see I don&amp;rsquo;t even need to have the things by myself. SUOC provides them all). Every SUOC trip have a leader and this time we had a training leader which we called it ghost leader. His name is Dave and the supervising leader was Vernon. There were also me and other girl whose name is Anna. She is a freshmen and that was her first experience in mountain biking.&lt;/p&gt;
+
+&lt;p&gt;The area was so beautiful and pretty different than I had in my hometown Gresik. The trail in Gresik was formed from limestone with brownish soil on top of it which will turn into mud after raining. The scenery is full of green plants, shrubs, grass, bamboo trees. On the other hand, in Syracuse, since it is fall, every leaf is turning into yellow. We have so many maple trees for the wood trails and for the open trails (outside the wood) the terrain was formed from gravel sometimes big rocks and grey soil. The trail was well made so that we have equal up and down trails.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;suoc_syracuse_quarry_mountain_biking_2.jpg&#34; alt=&#34;Mountain biking terrain&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;suoc_syracuse_quarry_mountain_biking_2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Mountain biking terrain&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;suoc_syracuse_quarry_mountain_biking_5.jpg&#34; alt=&#34;Vernon (with helmet) and Dave in open trail&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;suoc_syracuse_quarry_mountain_biking_5.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Vernon (with helmet) and Dave in open trail&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Since the trip was intended for beginner, the leader chose the suitable trail for Anna (I didn&amp;rsquo;t consider myself as beginner). At first, Anna was afraid. She came down and walked if there was steep down trail.  Understanding the trails is the key to success (didn&amp;rsquo;t fall). I didn&amp;rsquo;t know the trail and had accident. It happened after I went up the up trail which is followed by down trail with sudden right turn. I pushed my front brake and flipped. I almost fall over the cliff but fortunately I could grab the surrounding tree. Vernon also fell from his bike when he was jumping too high and could land perfectly. He got some bruises in his right hand and hip also he burst his front inner tube in the crash. Luckily we brought spare and changed it.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;suoc_syracuse_quarry_mountain_biking_3.jpg&#34; alt=&#34;Vernon (look at his right hand) and Dave replacing the inner tube&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;suoc_syracuse_quarry_mountain_biking_3.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Vernon (look at his right hand) and Dave replacing the inner tube&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;After all, It was a great to be able to continue my hobby (Mountain Biking) in Syracuse. Moreover I don&amp;rsquo;t have to own the equipments myself (I know I am cheap. It is because I am a poor grad student). Also today I experienced jumping from the boardwalk although it is only one meter high. See you on my next trip.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;suoc_syracuse_quarry_mountain_biking_4.jpg&#34; alt=&#34;The bike I used&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;suoc_syracuse_quarry_mountain_biking_4.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;The bike I used&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Canyoneering in Bear Swamp Creek</title>
+      <link>http://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</link>
+      <pubDate>Sun, 22 Sep 2013 07:06:28 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</guid>
+      
+        <description>
+
+&lt;p&gt;I just got home from my first canyoneering trip in my life. Thanks for Syracuse University Outing Club (SUOC) leaders who took me to this trip, here is the story. At first, we set off from SUOC Equipment room (E-room) at 10 am. There were seven people on this trip. Two leaders (Nate and Maggie) and five members (Nick, Megan, John, Sean and me). We went to Bear Swamp Creek in Cayuga County, New York. This creek goes to Skaneateles Lake. Here is the map of our canyoneering route.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe src=&#34;https://www.google.com/maps/d/embed?mid=1LhvGqq5mV_IEbU0zLDy0v-xDgEk&amp;hl=en&#34; width=&#34;100%&#34; height=&#34;400&#34;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;carpenter-s-falls&#34;&gt;Carpenter&amp;rsquo;s Falls&lt;/h2&gt;
+
+&lt;p&gt;Our entry point for this trip is Carpenter&amp;rsquo;s Fall. It is an overhanging limestone caprock which water flows on the middle of it. Its height is approximately 28 meters.
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://i2.wp.com/farm1.staticflickr.com/48/148151889_283645107c.jpg&#34; alt=&#34;Carpenter&amp;#39;s falls courtesy of Matt Champlin&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://i2.wp.com/farm1.staticflickr.com/48/148151889_283645107c.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Carpenter&amp;#39;s falls courtesy of Matt Champlin&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+The first person to go down this falls was Nick. Unfortunately when he was in the middle of his way down, there was a knot in the middle of the rope and he wouldn&amp;rsquo;t be able continue before he release the knot. Nick was having a problem in releasing the knot but he didn&amp;rsquo;t carry ascender since the leader didn&amp;rsquo;t expect that it would happen. Nate went down and gave Nick the ascender to go up so they fixed the rope. After they fixed it, everything went normal. We went down with this following order, Maggie – Nick – Megan – John – Me – Sean – Nate. Something that amazed me was we didn&amp;rsquo;t have to go up and untie our safety rope. After Nate went down, we only need to pull the rope and everything fell of so that we can take it to the next falls. I know that Nate arranged it so it could be done like that.&lt;/p&gt;
+
+&lt;h2 id=&#34;second-falls&#34;&gt;Second Falls&lt;/h2&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know the name of the falls but it was the second falls. After we descend from Carpenter&amp;rsquo;s falls, we walk following the river to the next falls. It was quite far from Carpenter&amp;rsquo;s falls and it wasn&amp;rsquo;t a vertical falls like Carpenter&amp;rsquo;s but, we have to rapel down with water. The slope&amp;rsquo;s angle of this falls maybe 60 degree. Nothing went wrong in this falls yet the rain start falling down pretty hard.&lt;/p&gt;
+
+&lt;h2 id=&#34;third-falls&#34;&gt;Third Falls&lt;/h2&gt;
+
+&lt;p&gt;The third falls is not far from the second falls. Unlike second falls which isn&amp;rsquo;t a vertical falls, Third falls is a combination of vertical falls and 75 degree slope. Although it is not high, it has a difficult entry point. At its edge there is an emerged rock that so after that rock you will be hanging on the rope and it is difficult to do. It went wrong when it came to my turn to rapel down. I was turned upside down since I couldn&amp;rsquo;t lower my body while my foot was still stepping on the emerged rock but I done this things before and I even ever rapel down with my head first facing downward so I kept calm and corrected my position. I was unharmed and it was a good experience to be told.&lt;/p&gt;
+
+&lt;h2 id=&#34;angle-falls&#34;&gt;Angle Falls&lt;/h2&gt;
+
+&lt;p&gt;This is the last falls we need to rapel down on this trip. It was a vertical falls which height is approximately 20 metes. Everything seems pretty fine until Nate found out that there is a bee hive on the edge of the cliff that we use as our entry point. So Nate had to move the entry point. The rain was pretty hard and I started shaking even though I wore double three-milimeters wetsuit. The new entry point was pretty scary because It&amp;rsquo;s also like the previous entry in the third fall but you wont realize until you go down on meter from the edge. There was a emerged rock that like a knife that try to cut the safety rope and this time we didn&amp;rsquo;t use the rope cover because we didn&amp;rsquo;t know that there was this rock. Anyway everything is fine and no accident but, everyone were hugging each other to fight against cold. It was me, Nick, Sean, John and Megan. The leader was a badass so they didn&amp;rsquo;t feel cold.&lt;/p&gt;
+
+&lt;p&gt;After the last falls we just walk toward the Skaneateles lake by following the river. It was quite far but exciting because we can play with the steam and pretend that we were a log that carried away by the stream. We took a short break after we reach the lake. It was quite and no one there even though there are houses there, maybe because of the rain. We continued to go back to our first entry point which is Carpenter&amp;rsquo;s falls through the woods. It was an amazing experience and I can&amp;rsquo;t wait to go on the next trip with SUOC.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>My First US&#39;s Family Home Visit</title>
+      <link>http://www.riospace.web.id/my-first-uss-family-home-visit/</link>
+      <pubDate>Thu, 05 Sep 2013 06:26:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/my-first-uss-family-home-visit/</guid>
+      
+        <description>&lt;p&gt;Yesterday, (4th of August 2013) we went on home visit. We were lucky to have Sue as our host family. Sue&amp;rsquo;s house is quite far from St. John&amp;rsquo;s University since it is located in Ringwood, New Jersey. We took a bus from New York Port Authority Bus Terminal (PABT) to Ringwood. I really enjoy our trip since along the road I saw beautiful trees. Unfortunately, I don&amp;rsquo;t know what kind of trees was it. The trip took approximately 1.5 hours. When we arrived at Ringwood, Sue, Dan (Sue&amp;rsquo;s husband), Pam (Sue&amp;rsquo;s neighbor) and Romero (Pam&amp;rsquo;s husband) already waited for us.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_bus_stop.jpg&#34; alt=&#34;Ringwood bus stop&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_bus_stop.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Ringwood bus stop&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Since I was appointed to go to Sue&amp;rsquo;s house, I took a ride with Dan. He told me that he is a teacher. He teaches acting, also He acted in Leonardo DiCaprio&amp;rsquo;s newest movie “The Wolf of Wall Street” as a judge (I should watch it). I was amazed at the first time arriving at Sue&amp;rsquo;s house. The house is so beautiful. It is a lodge which made from Chestnut wood and surrounded by maple trees.&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_chestnut_house.jpg&#34; alt=&#34;Barbecue party at Sue&amp;#39;s house&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_chestnut_house.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Barbecue party at Sue&amp;#39;s house&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_chestnut_house_front.jpg&#34; alt=&#34;Jack outside Sue&amp;#39;s house&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_chestnut_house_front.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Jack outside Sue&amp;#39;s house&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Sue told us that long time ago (if I wasn&amp;rsquo;t mistaken around 1920), Northeast America was occupied by American Chestnut trees. But, suddenly there was this plague which attacked the American chestnut tree and all of the trees died and people used the wood to make houses. That”s why the neighborhood&amp;rsquo;s houses also made from wood.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_chestnut_house_front2.jpg&#34; alt=&#34;Tradional wood house&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_chestnut_house_front2.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Tradional wood house&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;At the house we were greeted by Sue&amp;rsquo;s family members. They are Shaun (Sue&amp;rsquo;s stepson), Jack (Sue”s son), Sue&amp;rsquo;s mother(I forgot your name grandma), Sarah (Shaun&amp;rsquo;s wife) and Victoria (Jack&amp;rsquo;s girlfriend). Sue&amp;rsquo;s live in the house with her mother and her husband, Shaun lives in Brooklyn, New York and Jack is on his senior year as an undergraduate student in Rutgers. All of them are very friendly.&lt;/p&gt;
+
+&lt;p&gt;In the afternoon, we started to have a barbecue party. Actually we did nothing. It was Dan who prepare the barbecue and Sue prepared the snack and vegetables. I was lucky because Sue also prepared rice because it reminds me of home (Indonesia). After having the barbecue, we went to the lake. Sue&amp;rsquo;s house is also near a lake and there is an artificial beach with white sand on it. Many people from the neighborhood spent their time there. I think because it was holiday and the weather was perfect for outdoor activities. Everyone seems enjoying the summertime on a beautiful lake.&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_lake_parking.jpg&#34; alt=&#34;Walking toward the lake&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_lake_parking.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Walking toward the lake&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_lake_picnic.jpg&#34; alt=&#34;Enjoying picnic at the lake&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_lake_picnic.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Enjoying picnic at the lake&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ringwood_nj_lake.jpg&#34; alt=&#34;The lake&amp;#39;s view&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ringwood_nj_lake.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;The lake&amp;#39;s view&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Overall, I enjoyed visiting Sue&amp;rsquo;s house because it give me different scenery from Manhattan (which is dominated by big building). The country side sight that I really expected from the U.S. I would really love to come to your house again Sue. Thank you for giving me the chance to visit your beautiful home&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Bakso Moro Seneng Pak Slamet Trenggalek</title>
+      <link>http://www.riospace.web.id/bakso-moro-seneng-pak-slamet-trenggalek/</link>
+      <pubDate>Sat, 25 Aug 2012 06:20:34 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/bakso-moro-seneng-pak-slamet-trenggalek/</guid>
+      
+        <description>&lt;p&gt;Jika anda pecinta kuliner dan kebetulan sedang singgah di kota keripik &lt;a href=&#34;http://www.trenggalekkab.go.id/&#34;&gt;Trenggalek&lt;/a&gt; pastikan anda menyempatkan diri mampir dan mencicipi Bakso Moro Seneng Pak Slamet.&lt;/p&gt;
+
+&lt;p&gt;Hiruk Pikuk pembeli sudah mulai ramai saat saya datang ke lokasi sekitar jam 10 pagi. Warung bakso yang terletak di Jalan Doktor Setiabudi dekat RSUD Doktor Soedomo Trenggalek ini memang selalu ramai pembeli. Usut punya usut ternyata yang menarik banyaknya pembeli ke warung tersebut adalah ke khas-an yang dimiliki oleh warung bakso tersebut yakni gorengan dan sambal baksonya. Ada apa dengan gorengannya? Hampir setiap pembeli yang mampir selalu berlomba-lomba untuk mendapatkan makanan pelengkap tersebut sedangkan untuk mendapatkan gorengan ini butuh usaha ekstra. Saya sempat antri di dapur tempat pembuatan gorengan sekitar 15 menit untuk mendapatkan gorengan yang diburu kebanyakan pembeli. Sembari mengantri saya sempat “mencuri” resep gorengan tersebut antara lain didalamnya adalah tepung tapioka yang dicampur dengan beberapa bumbu rahasia serta potongan kentang dan daging.&lt;/p&gt;
+
+&lt;p&gt;Setelah dapat, bakso gorengan pun siap saya santap, tak lupa saya tambahkan sambal yang konon memiliki aroma yang khas. Setelah dicampur dengan bakso, diaduk-aduk lalu saya cicipi, benar ternyata sambal tersebut memiliki aroma khas daun jeruk purut. Kenikmatan bakso pun semakin bertambah ketika saya melayangkan gigitan pertama ke gorengan yang susah payah saya dapatkan tadi. Karena masih fresh dari wajan, gorengan masih cukup kenyal. Jangan lupa untuk memesan minuman untuk menetralisir sambal yang cukup pedas.&lt;/p&gt;
+
+&lt;p&gt;Berikut ada beberapa saran jika anda mau mencoba kenikmatan Bakso Moro Seneng Pak Slamet&lt;/p&gt;
+
+&lt;p&gt;Untuk bisa mendapatkan gorenang pastikan anda datang antara jam 10 s/d jam 1 siang.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://www.google.com/maps/d/embed?mid=1II1HWdxhrXe9hncTpCci5kP1moI&#34; width=&#34;100%&#34; height=&#34;400&#34;&gt;&lt;/iframe&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Instalasi Lampp Pada Ubuntu Server</title>
+      <link>http://www.riospace.web.id/instalasi-lampp-pada-ubuntu-server/</link>
+      <pubDate>Wed, 08 Feb 2012 06:07:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/instalasi-lampp-pada-ubuntu-server/</guid>
+      
+        <description>&lt;p&gt;Ini pengalaman pribadi saya saat menginstal Ubuntu Server pada komputer saya. Komputer tersebut ingin saya jadikan sebagai web server, tentu saja saya akan butuh untuk menginstal OpenSSH dan LAMPP. Ubuntu Server pada dasarnya menyediakan pilihan software yang ingin kita instal pada komputer kita saat kita melakukan instalasi. Yakni pada saat kita sampai pada halaman software selection.&lt;/p&gt;
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ubuntu_tasksel_options.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ubuntu_tasksel_options.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Sialnya. Pada saat itu saya tidak tahu bagaimana cara memilih aplikasi yang ingin saya instal. Akhirnya tanpa pikir panjang mungkin tombol yang digunakan itu adalah ENTER. Saya tekan dan alhasil step tersebut berhasil saya lewati tanpa berhasil memilih baik OpenSSH atau LAMPP untuk diinstall.&lt;/p&gt;
+
+&lt;p&gt;Usut punya usut ternyata hal tersebut masih bisa kita lakukan setelah instalasi OS selesai. yakni dengan perintah tasksel.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ sudo tasksel&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Setelah anda eksekusi perintah tersebut akan muncul window yang sama persis saat anda melakukan instalasi. Ternyata tombol yang digunakan untuk memilih software yang kita ingin install adalah SPACE.&lt;/p&gt;
+
+
+
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;ubuntu_tasksel_options_checked.png&#34; /&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;ubuntu_tasksel_options_checked.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Pilih software yang anda inginkan kemudian tekan ENTER dan jawab semua pertanyaan yang akan diajukan dengan jujur.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Menambahkan Interface Baru Pada Ubuntu Server</title>
+      <link>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</link>
+      <pubDate>Sat, 07 Jan 2012 06:04:33 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
+      
+        <description>&lt;p&gt;Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).&lt;/p&gt;
+
+&lt;p&gt;Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ ifconfig&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;dan hasilnya sesuai dengan prediksi saya. Seharusnya ada 2 interface yang muncul, namun hanya ada 1 buah interface yang muncul saat saya mengeksekusi perintah tersebut. Setelah beberapa saat mencoba mencari troubleshooter lewat Google. Akhirnya saya menemukannya disini.&lt;/p&gt;
+
+&lt;p&gt;Seharusnya interface tersebut dapat dikenali secara otomatis setelah dipasang. Namun apabila anda menemui masalah seperti saya. Anda dapat meng-enable interface anda dengan menghapus sebuah file dengan running perintah berikut pada terminal.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ sudo rm /etc/udev/rules.d/70-persistent-net.rules/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Setelah itu anda tinggal me-reboot komputer anda.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Enabling New Interface in Ubuntu Server</title>
+      <link>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
+      <pubDate>Fri, 06 Jan 2012 05:59:57 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
+      
+        <description>&lt;p&gt;Tonight, I replaced one of my network interfaces in my computer. I changed the old one, which is Fast Ethernet type, with the new one, which is Gigabit type. I was working in my Ubuntu server 11.04. When I finished replacing the interface. I turned my computer on to see will it work. I found that the new interface didn”t work. When I plugged the cable in, the LED indicator simply didn”t light.&lt;/p&gt;
+
+&lt;p&gt;After that I tried to see whether the problem is within the device or the Operating System. I run&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ ifconfig&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and I got the list of my interfaces, but the new one wasn”t there (I knew because the total of my interfaces decreased) then I knew the problem lies within the Operating System. After spending a few minute searching for the answer using Google finally I found it here.&lt;/p&gt;
+
+&lt;p&gt;We can re-enable our interfaces by deleting one file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ sudo rm /etc/udev/rules.d/70-persistent-net.rules/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that, just reboot the computer and all will work well as expected.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>XAMPP for Linux Installation</title>
+      <link>http://www.riospace.web.id/xampp-for-linux-installation/</link>
+      <pubDate>Sun, 03 Jul 2011 23:34:17 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/xampp-for-linux-installation/</guid>
+      
+        <description>&lt;p&gt;XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.&lt;/p&gt;
+
+&lt;p&gt;This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ubuntu 11.04 operating system (Natty Narwhal)&lt;/li&gt;
+&lt;li&gt;XAMPP for Linux version 1.7.4&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here are the following steps in installling XAMPP for Linux.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: &lt;a href=&#34;https://www.apachefriends.org/download.html&#34;&gt;Download&lt;/a&gt; XAMPP for Linux installer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: Open terminal and change the working directory to your downloaded file directory by typing cd command. In this case my downloaded file is in &lt;em&gt;Downloads&lt;/em&gt; directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Downloads/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: Change to super user mode simply by typing the following command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ sudo su&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: Extract the downloaded file to &lt;em&gt;/opt&lt;/em&gt; folder using the following command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ tar xvfz xampp-linux-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;x&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.tar.gz -C /opt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      note
+    
+  &lt;/div&gt;
+  &lt;p&gt;On xampp-linux-[x].tar.gz, the [x] mark  is the version, as mentioned above in this tutorial, I am using version 1.7.4&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Step 5&lt;/strong&gt;: Run the service by executing the following command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ /opt/lampp/lampp start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Step 6&lt;/strong&gt;: Output verification, if there isn&amp;rsquo;t any trouble in the preceding steps. it will give the following outputs.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Starting XAMPP for Linux 1.7.4...
+XAMPP: Starting Apache with SSL (and PHP5)...
+XAMPP: Starting MySQL...
+XAMPP: Starting ProFTPD...
+XAMPP for Linux started.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This is the end of the tutorial. It is easy, isn”t it? I hope it will help you, thanks&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reference :&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Seidler, Kai Oswald, 2009, XAMPP for Linux, [online], (&lt;a href=&#34;http://www.apachefriends.org/en/xampp-linux.html&#34;&gt;http://www.apachefriends.org/en/xampp-linux.html&lt;/a&gt;, diakses tanggal 3 Juli 2011 )&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Instalasi XAMPP pada Sistem Operasi Linux</title>
+      <link>http://www.riospace.web.id/instalasi-xampp-pada-sistem-operasi-linux/</link>
+      <pubDate>Sun, 03 Jul 2011 22:34:17 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/instalasi-xampp-pada-sistem-operasi-linux/</guid>
+      
+        <description>&lt;p&gt;XAMPP,  kependekan dari X(Linux atau Windows atau Mac OS X atau Solaris), Apache, MySQL, PHP, Perl, merupakan aplikasi yang terdiri dari webserver (Apache), database server (MySQL) serta FTP server (ProFTPD) yang  diperuntukkan untuk lingkungan development.  Seperti yang disebutkan diatas XAMPP dapat berjalan pada sistem operasi baik berbasis WINDOWS maupun UNIX.&lt;/p&gt;
+
+&lt;p&gt;Pada kesempatan kali ini saya akan menjelaskan cara instalasi XAMPP pada sistem operasi linux. Berikut beberapa spesifikasi yang digunakan.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sistem Operasi Ubuntu 11.04 (Natty Narwhal)&lt;/li&gt;
+&lt;li&gt;XAMPP versi 1.7.4&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Berikut langkah-langkah instalasi XAMPP pada sistem operasi Linux.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Langkah 1&lt;/strong&gt;: &lt;a href=&#34;https://www.apachefriends.org/download.html&#34;&gt;Download&lt;/a&gt; installer XAMPP untuk Linux.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Langkah 2&lt;/strong&gt;: Masuk ke terminal dan ubah direktori ke tempat anda menyimpan file yang baru saja di download. Dalam kasus ini file saya terdapat di folder Downloads.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; Downloads/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Langkah 3&lt;/strong&gt;: Ubah ke mode super user dengan mengunakan perintah sebagai berikut.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ sudo su&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Langkah 4&lt;/strong&gt;: Extract file yang barusan di download ke folder &lt;em&gt;/opt&lt;/em&gt; dengan perintah sebagai berikut.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ tar xvfz xampp-linux-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;x&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;.tar.gz -C /opt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;shortcode-notice note&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
+    
+      note
+    
+  &lt;/div&gt;
+  &lt;p&gt;Pada xampp-linux-[x].tar.gz, tanda [x] merupakan versi dan versi yang saya gunakan adalah 1.7.4&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Langkah 5&lt;/strong&gt;: Jalankan service dengan perintah berikut.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;user@ubuntu:~$ /opt/lampp/lampp start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Langkah 6&lt;/strong&gt;: Verifikasi output, jika tidak terdapat masalah dalam instalasi maka pada terminal akan keluar output sebagai berikut.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Starting XAMPP for Linux 1.7.4...
+XAMPP: Starting Apache with SSL (and PHP5)...
+XAMPP: Starting MySQL...
+XAMPP: Starting ProFTPD...
+XAMPP for Linux started.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Demikian cara instalasi XAMPP pada sistem operasi linux. Mudah bukan? dan semoga dapat membantu. Terima Kasih&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Referensi :&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Seidler, Kai Oswald, 2009, XAMPP for Linux, [online], (&lt;a href=&#34;http://www.apachefriends.org/en/xampp-linux.html&#34;&gt;http://www.apachefriends.org/en/xampp-linux.html&lt;/a&gt;, diakses tanggal 3 Juli 2011 )&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Circle Square War</title>
+      <link>http://www.riospace.web.id/circle-square-war/</link>
+      <pubDate>Thu, 10 Feb 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/circle-square-war/</guid>
+      
+        <description>&lt;p&gt;Circle Square War adalah sebuah project pada matakuliah Game Development yang saya ikuti semasa saya kuliah di Teknik Informatika ITS. Game ini merupakan pengembangan dari script yang ditulis oleh Philip Radvan mengenai projectile weapons. Berikut adalah game Circle Square War, dimana game ini adalah modifikasi dari script yang ditulis oleh Philip Radvan tersebut.&lt;/p&gt;
+
+&lt;div style=&#34;img&#34;&gt;
+&lt;embed width=&#34;500&#34; height=&#34;364&#34; type=&#34;application/x-shockwave-flash&#34; src=&#34;csw.swf&#34; pluginspage=&#34;http://www.macromedia.com/go/getflashplayer&#34; allowscriptaccess=&#34;never&#34; quality=&#34;high&#34; enablejavascript=&#34;false&#34; allownetworking=&#34;internal&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Selamat bermain dan jadilah salah satu high scorer game ini. 😀&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Tachymeter</title>
+      <link>http://www.riospace.web.id/tachymeter/</link>
+      <pubDate>Mon, 31 Jan 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/tachymeter/</guid>
+      
+        <description>
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34; &gt;
+  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;tachymeter.jpg&#34; alt=&#34;watch with tachymeter&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;tachymeter.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;watch with tachymeter&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;
+
+
+&lt;p&gt;Beberapa bulan yang lalu saya beli arloji baru (maklum sudah jadi kebutuhan). Bentuknya hampir mirip sama gambar diatas. Setelah dibeli, saya teliti (Emang waktu mau beli ndak di teliti?), ternyata di arloji ada tulisan tachymeter. ini apaan sih? lalu arti dari angka-angka 300, 240, 200 s/d 60 itu apa? Setelah menggali informasi dari google, akhirnya saya mendapatkan kesimpulan bahwa &lt;strong&gt;mostly&lt;/strong&gt; tachymeter digunakan sebagai &lt;em&gt;alat bantu untuk memperkirakan kecepatan&lt;/em&gt;. Kenapa saya mengatakan untuk memperkirakan bukan untuk menghitung, karena angkanya didapatkan dari hasil yang cukup mistis dengan menggunakan pendekatan. Syarat utama untuk dapat menghitung kecepatannya adalah dengan mengetahui jarak yang di tempuh obyek yang akan kita perkirakan kecepatannya (ini lebih mistis lagi). Daripada bingung-bingung di jelaskan teorinya langsung saja kita ke praktikum.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      Permasalahan
+    
+  &lt;/div&gt;
+  &lt;p&gt;Anda ingin memperkirakan kecepatan sebuah mobil pada saat perlombaan NASCAR. Anda mulai mengitung laju rata-rata mobil tersebut pada saat detik jam anda berada pada posisi 0. setelah 30 detik mobil tersebut telah menempuh jarak 1 km. Berapakah rata-rata kecepatan mobil tersebut?&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;
+&lt;div class=&#34;shortcode-notice tip&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title tip&#34;&gt;
+    
+      Solusi
+    
+  &lt;/div&gt;
+  &lt;p&gt;Mudah sekali, tinggal lihat di bar tachymeter yang di tunjuk oleh penunjuk detik, yakni detik ke 30  menunjuk ke 120. Jadi kecepatan mobil tersebut adalah 120 km/jam.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Bagi teman-teman yang sudah terlanjur beli arloji yang tidak memiliki bar tachymeter jangan berkecil hati, karena dial tachymeter didapatkan dari perhitungan berikut.&lt;/p&gt;
+
+&lt;p&gt;$$
+tachymeter \space dial = \frac{3600}{t}
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+7,2s \leq t \leq 60s
+$$&lt;/p&gt;
+
+&lt;p&gt;Permasalahan pertama adalah contoh yang ideal dimana jarak yang diambil sebagai contoh adalah tepat 1 km lalu bagaimana apabila jaraknya kurang dari 1 km, dan bagaimana apabila obyek yang diukur memiliki waktu tempuh lebih dari 60 detik? Untuk dapat memudahkan menjawab pertanyaan diatas langsung saja kita masuk ke contoh permasalahan.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;shortcode-notice info&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title info&#34;&gt;
+    
+      Permasalahan
+    
+  &lt;/div&gt;
+  &lt;p&gt;Anda sedang berenang dengan teman anda, tiba-tiba teman anda meminta anda untuk menghitung kecepatan dia saat berenang  sejauh 20 meter. Teman anda mulai berenang dan anda mulai menghitung dan ternyata dia membutuhkan waktu sebanyak 45 detik. lalu berapa kecepatannya?&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;
+&lt;div class=&#34;shortcode-notice tip&#34;&gt;
+  &lt;div class=&#34;shortcode-notice-title tip&#34;&gt;
+    
+      Solusi
+    
+  &lt;/div&gt;
+  &lt;p&gt;Untuk detik 45 maka bar tachymeter yang ditunjuk adalah angka 80.
+$$
+dial = \frac{3600}{45}
+$$
+$$
+dial = 80
+$$
+sedangkan jarak yang ditempuh cuma 20 meter,  maka kecepatan teman anda adalah
+$$
+\frac{20}{1000} \times 80 = 1,6 \space km/jam
+$$&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Sedangkan untuk waktu yang melebihi 60 detik maka sebisa mungkin sampel waktu yang berada pada range 7,2 sampai dengan 60 detik, Oleh karena itu jarak yang digunakan untuk mengambil sampel waktu harus di perkecil. Misal teman anda berenang menempuh jarak 50 meter, namun untuk menempuh 50 meter tersebut butuh waktu lebih dari 60 detik,  maka anda seharusnya mengukur dengan mengambil sampel jarak tempuh yang masih berada pada rentan waktu yang diizinkan, Sehingga dapat dilakukan perhitungan sesuai contoh diatas. Sekian penjelasan dari saya semoga dapat membantu. Kalau masih kurang dapat dimengerti jangan sungkan-sungkan untuk bertanya.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/categories/</link>
+    <description>Recent content in Categories on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="http://www.riospace.web.id/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Miscelaneous</title>
+      <link>http://www.riospace.web.id/categories/miscelaneous/</link>
+      <pubDate>Sat, 22 Jan 2011 12:08:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/categories/miscelaneous/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

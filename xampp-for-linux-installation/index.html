@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>XAMPP for Linux Installation - Live Kaizen life</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Rio Maulana" />
+  <meta name="description" content="XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
+This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial." />
+
+  <meta name="keywords" content="Rio, Maulana, experiment, research" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://www.riospace.web.id/xampp-for-linux-installation/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="XAMPP for Linux Installation" />
+<meta property="og:description" content="XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
+This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.riospace.web.id/xampp-for-linux-installation/" />
+
+
+
+<meta property="article:published_time" content="2011-07-03T23:34:17-04:00"/>
+
+<meta property="article:modified_time" content="2011-07-03T23:34:17-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="XAMPP for Linux Installation">
+<meta itemprop="description" content="XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
+This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial.">
+
+
+<meta itemprop="datePublished" content="2011-07-03T23:34:17-04:00" />
+<meta itemprop="dateModified" content="2011-07-03T23:34:17-04:00" />
+<meta itemprop="wordCount" content="281">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="XAMPP for Linux Installation"/>
+<meta name="twitter:description" content="XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
+This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Rio&#39;s Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/post/">Archives</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/tags/">Tags</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/categories/">Categories</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/about/">About</a>
+          
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Rio's Space
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/about/">About</a>
+          
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">XAMPP for Linux Installation</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2011-07-03 </span>
+        
+        <span class="more-meta"> 281 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.</p>
+
+<p>This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial.</p>
+
+<ul>
+<li>Ubuntu 11.04 operating system (Natty Narwhal)</li>
+<li>XAMPP for Linux version 1.7.4</li>
+</ul>
+
+<p>Here are the following steps in installling XAMPP for Linux.</p>
+
+<p><strong>Step 1</strong>: <a href="https://www.apachefriends.org/download.html">Download</a> XAMPP for Linux installer.</p>
+
+<p><strong>Step 2</strong>: Open terminal and change the working directory to your downloaded file directory by typing cd command. In this case my downloaded file is in <em>Downloads</em> directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ <span class="nb">cd</span> Downloads/</code></pre></div>
+<p><strong>Step 3</strong>: Change to super user mode simply by typing the following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ sudo su</code></pre></div>
+<p><strong>Step 4</strong>: Extract the downloaded file to <em>/opt</em> folder using the following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ tar xvfz xampp-linux-<span class="o">[</span>x<span class="o">]</span>.tar.gz -C /opt</code></pre></div>
+<div class="shortcode-notice note">
+  <div class="shortcode-notice-title note">
+    
+      note
+    
+  </div>
+  <p>On xampp-linux-[x].tar.gz, the [x] mark  is the version, as mentioned above in this tutorial, I am using version 1.7.4</p>
+
+</div>
+
+
+<p><strong>Step 5</strong>: Run the service by executing the following command.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ /opt/lampp/lampp start</code></pre></div>
+<p><strong>Step 6</strong>: Output verification, if there isn&rsquo;t any trouble in the preceding steps. it will give the following outputs.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">Starting XAMPP for Linux 1.7.4...
+XAMPP: Starting Apache with SSL (and PHP5)...
+XAMPP: Starting MySQL...
+XAMPP: Starting ProFTPD...
+XAMPP for Linux started.</code></pre></div>
+<p>This is the end of the tutorial. It is easy, isn”t it? I hope it will help you, thanks</p>
+
+<p><strong>Reference :</strong></p>
+
+<ul>
+<li>Seidler, Kai Oswald, 2009, XAMPP for Linux, [online], (<a href="http://www.apachefriends.org/en/xampp-linux.html">http://www.apachefriends.org/en/xampp-linux.html</a>, diakses tanggal 3 Juli 2011 )</li>
+</ul>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Rio Maulana</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2011-07-03</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/enabling-new-interface-in-ubuntu-server/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Enabling New Interface in Ubuntu Server</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/instalasi-xampp-pada-sistem-operasi-linux/">
+            <span class="next-text nav-default">Instalasi XAMPP pada Sistem Operasi Linux</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'riospace';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rimaulana@outlook.com" rel="me noopener" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/rim1910" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/riomaulana/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/rimaulana" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://www.riospace.web.id/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2011 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Rio Maulana</span></span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
