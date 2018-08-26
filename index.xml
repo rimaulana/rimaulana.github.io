@@ -43,7 +43,7 @@
       
         <description>
 
-&lt;p&gt;Postingan kali ini adalah lanjutan dari postingan &lt;a href=&#34;https://riospace.web.id/mikrotik-bridging-challenge-solution&#34;&gt;IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution&lt;/a&gt;, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:&lt;/p&gt;
+&lt;p&gt;Postingan kali ini adalah lanjutan dari postingan &lt;a href=&#34;http://www.riospace.web.id/mikrotik-bridging-challenge-solution&#34;&gt;IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution&lt;/a&gt;, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0&lt;/li&gt;
