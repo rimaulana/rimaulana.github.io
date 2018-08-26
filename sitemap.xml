@@ -150,7 +150,294 @@
   </url>
   
   <url>
+    <loc>http://www.riospace.web.id/tags/256/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/802.11/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/amazon/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/aws/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/bakso/</loc>
+    <lastmod>2012-08-25T06:20:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/berjebraw/</loc>
+    <lastmod>2013-10-21T12:46:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/big/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/canyoneering/</loc>
+    <lastmod>2013-09-22T07:06:28-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.riospace.web.id/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/challenges/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/charity/</loc>
+    <lastmod>2013-10-17T12:40:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/chord/</loc>
+    <lastmod>2013-10-21T12:46:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/chord/</loc>
+    <lastmod>2013-10-21T12:46:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/chr/</loc>
+    <lastmod>2017-08-30T18:56:51-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/competition/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/configuration/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/constellation/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/dipper/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/enable/</loc>
+    <lastmod>2012-01-07T06:04:33-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/english/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/fall/</loc>
+    <lastmod>2013-09-22T07:06:28-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/flash/</loc>
+    <lastmod>2011-02-10T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/forefathers/</loc>
+    <lastmod>2013-10-21T12:46:05-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/fulbright/</loc>
+    <lastmod>2013-09-05T06:26:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/fun/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/games/</loc>
+    <lastmod>2011-02-10T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/games/</loc>
+    <lastmod>2011-02-10T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/gemini/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/idn/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/indonesia/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/install/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/installasi/</loc>
+    <lastmod>2011-07-03T22:34:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/installation/</loc>
+    <lastmod>2011-07-03T23:34:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/interface/</loc>
+    <lastmod>2012-01-07T06:04:33-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/interfaces/</loc>
+    <lastmod>2017-08-30T18:56:51-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/introduction/</loc>
+    <lastmod>2011-01-22T12:08:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/ischool/</loc>
+    <lastmod>2013-10-17T12:40:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/jam-tangan/</loc>
+    <lastmod>2011-01-31T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/kuliner/</loc>
+    <lastmod>2012-08-25T06:20:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/lampp/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/linux/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/linux/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -163,8 +450,71 @@
   </url>
   
   <url>
-    <loc>http://www.riospace.web.id/categories/miscelaneous/</loc>
-    <lastmod>2011-01-22T12:08:26-04:00</lastmod>
+    <loc>http://www.riospace.web.id/tags/mikrotik/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/miscellaneous/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/mysql/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/networking/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/new-jersey/</loc>
+    <lastmod>2013-09-05T06:26:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/offroad/</loc>
+    <lastmod>2013-09-23T12:26:24-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/orion/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/phpmyadmin/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/physics/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/physics/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -177,7 +527,197 @@
   </url>
   
   <url>
+    <loc>http://www.riospace.web.id/tags/professor/</loc>
+    <lastmod>2013-10-17T12:40:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/projectile-weapon/</loc>
+    <lastmod>2011-02-10T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/qam/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/qemu/</loc>
+    <lastmod>2017-08-30T18:56:51-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/qpsk/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/quarry/</loc>
+    <lastmod>2013-09-23T12:26:24-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/rds/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/ringwood/</loc>
+    <lastmod>2013-09-05T06:26:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/rio-indra-maulana/</loc>
+    <lastmod>2011-01-22T12:08:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/routeros/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/server/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/star/</loc>
+    <lastmod>2014-01-07T16:29:17-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/summer/</loc>
+    <lastmod>2013-09-05T06:26:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/suoc/</loc>
+    <lastmod>2013-09-23T12:26:24-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/syracuse/</loc>
+    <lastmod>2013-10-17T12:40:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/tachymeter/</loc>
+    <lastmod>2011-01-31T15:29:47-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://www.riospace.web.id/tags/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/tasksel/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/travel/</loc>
+    <lastmod>2013-09-22T07:06:28-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/categories/travel/</loc>
+    <lastmod>2013-09-23T12:26:24-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/trenggalek/</loc>
+    <lastmod>2012-08-25T06:20:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/ubuntu/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/university/</loc>
+    <lastmod>2013-10-17T12:40:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/virtualization/</loc>
+    <lastmod>2017-08-30T18:56:51-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/vlan/</loc>
+    <lastmod>2017-09-01T19:06:32-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/web/</loc>
+    <lastmod>2012-02-08T06:07:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/wireless/</loc>
+    <lastmod>2014-01-23T14:33:45-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.riospace.web.id/tags/xampp/</loc>
+    <lastmod>2014-10-03T07:28:34-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

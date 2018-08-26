@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Challenges on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/tags/challenges/</link>
+    <description>Recent content in Challenges on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Sep 2017 19:06:32 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.riospace.web.id/tags/challenges/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IDN Networking Competition 2017 Mikrotik Bridging Challenge Solution Verification</title>
+      <link>http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</link>
+      <pubDate>Fri, 01 Sep 2017 19:06:32 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</guid>
+      <description>Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)</description>
+    </item>
+    
+    <item>
+      <title>Mikrotik Bridging Challenge Solution</title>
+      <link>http://www.riospace.web.id/mikrotik-bridging-challenge-solution/</link>
+      <pubDate>Fri, 25 Aug 2017 16:03:29 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/mikrotik-bridging-challenge-solution/</guid>
+      <description>infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut.</description>
+    </item>
+    
+  </channel>
+</rss>

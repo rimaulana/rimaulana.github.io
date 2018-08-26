@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enable on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/tags/enable/</link>
+    <description>Recent content in Enable on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Jan 2012 06:04:33 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.riospace.web.id/tags/enable/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Menambahkan Interface Baru Pada Ubuntu Server</title>
+      <link>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</link>
+      <pubDate>Sat, 07 Jan 2012 06:04:33 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
+      <description>Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.</description>
+    </item>
+    
+    <item>
+      <title>Enabling New Interface in Ubuntu Server</title>
+      <link>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
+      <pubDate>Fri, 06 Jan 2012 05:59:57 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
+      <description>Tonight, I replaced one of my network interfaces in my computer. I changed the old one, which is Fast Ethernet type, with the new one, which is Gigabit type. I was working in my Ubuntu server 11.04. When I finished replacing the interface. I turned my computer on to see will it work. I found that the new interface didn”t work. When I plugged the cable in, the LED indicator simply didn”t light.</description>
+    </item>
+    
+  </channel>
+</rss>
