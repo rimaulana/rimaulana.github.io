@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.riospace.web.id/sitemap.xml
+Sitemap: https://www.riospace.web.id/sitemap.xml

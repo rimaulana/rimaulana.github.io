@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on Live Kaizen life</title>
-    <link>http://www.riospace.web.id/tags/ubuntu/</link>
-    <description>Recent content in Ubuntu on Live Kaizen life</description>
+    <title>Ubuntu on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 03 Oct 2014 07:28:34 -0400</lastBuildDate>
     
-	<atom:link href="http://www.riospace.web.id/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.riospace.web.id/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Accessing Amazon Web Service MySQL Database Using PhpMyAdmin</title>
-      <link>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
+      <link>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
       <pubDate>Fri, 03 Oct 2014 07:28:34 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
+      <guid>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
       <description>Amazon Web Service currently offers one-year-free trial of their services and I am experimenting with their database service. I set up a MySQL server database. However, after the service was ready, I found out that, AWS doesn”t provide GUI to access the database. I always use phpMyAdmin to manage MySQL database because it is easy and thinking whether I could use phpMyAdmin to manage my AWS database or not. After a quick research on the Internet, I found out that it is possible.</description>
     </item>
     
     <item>
       <title>Enabling New Interface in Ubuntu Server</title>
-      <link>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
+      <link>https://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
       <pubDate>Fri, 06 Jan 2012 05:59:57 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
+      <guid>https://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
       <description>Tonight, I replaced one of my network interfaces in my computer. I changed the old one, which is Fast Ethernet type, with the new one, which is Gigabit type. I was working in my Ubuntu server 11.04. When I finished replacing the interface. I turned my computer on to see will it work. I found that the new interface didn”t work. When I plugged the cable in, the LED indicator simply didn”t light.</description>
     </item>
     
     <item>
       <title>XAMPP for Linux Installation</title>
-      <link>http://www.riospace.web.id/xampp-for-linux-installation/</link>
+      <link>https://www.riospace.web.id/xampp-for-linux-installation/</link>
       <pubDate>Sun, 03 Jul 2011 23:34:17 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/xampp-for-linux-installation/</guid>
+      <guid>https://www.riospace.web.id/xampp-for-linux-installation/</guid>
       <description>XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
 This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial.</description>
     </item>

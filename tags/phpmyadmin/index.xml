@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Phpmyadmin on Live Kaizen life</title>
-    <link>http://www.riospace.web.id/tags/phpmyadmin/</link>
-    <description>Recent content in Phpmyadmin on Live Kaizen life</description>
+    <title>Phpmyadmin on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/tags/phpmyadmin/</link>
+    <description>Recent content in Phpmyadmin on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 03 Oct 2014 07:28:34 -0400</lastBuildDate>
     
-	<atom:link href="http://www.riospace.web.id/tags/phpmyadmin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.riospace.web.id/tags/phpmyadmin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Accessing Amazon Web Service MySQL Database Using PhpMyAdmin</title>
-      <link>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
+      <link>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
       <pubDate>Fri, 03 Oct 2014 07:28:34 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
+      <guid>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
       <description>Amazon Web Service currently offers one-year-free trial of their services and I am experimenting with their database service. I set up a MySQL server database. However, after the service was ready, I found out that, AWS doesn”t provide GUI to access the database. I always use phpMyAdmin to manage MySQL database because it is easy and thinking whether I could use phpMyAdmin to manage my AWS database or not. After a quick research on the Internet, I found out that it is possible.</description>
     </item>
     

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Live Kaizen life</title>
-    <link>http://www.riospace.web.id/</link>
-    <description>Recent content on Live Kaizen life</description>
+    <title>Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/</link>
+    <description>Recent content on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
-        <atom:link href="http://www.riospace.web.id/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.riospace.web.id/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://www.riospace.web.id/about/</link>
+      <link>https://www.riospace.web.id/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>http://www.riospace.web.id/about/</guid>
+      <guid>https://www.riospace.web.id/about/</guid>
       
         <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
 
@@ -36,10 +36,10 @@
     
     <item>
       <title>Accessing Amazon Web Service MySQL Database Using PhpMyAdmin</title>
-      <link>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
+      <link>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</link>
       <pubDate>Fri, 03 Oct 2014 07:28:34 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
+      <guid>https://www.riospace.web.id/accessing-amazon-web-service-mysql-database-using-phpmyadmin/</guid>
       
         <description>&lt;p&gt;Amazon Web Service currently offers one-year-free trial of their services and I am experimenting with their database service. I set up a MySQL server database. However, after the service was ready, I found out that, AWS doesn”t provide GUI to access the database. I always use phpMyAdmin to manage MySQL database because it is easy and thinking whether I could use phpMyAdmin to manage my AWS database or not. After a quick research on the Internet, I found out that it is possible. How could we do that?&lt;/p&gt;
 
@@ -79,7 +79,7 @@ If you find this at the end of your configuration you don&amp;#34;t need to add 
 Once you added those lines, save the changes and you are all set. Now run your phpMyAdmin page from your browser and you will start seeing drop down menu of server options you wish to connect to like the figure below.&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -95,10 +95,10 @@ Once you added those lines, save the changes and you are all set. Now run your p
     
     <item>
       <title>QAM Modulation Technique Concept Challenges and Solutions</title>
-      <link>http://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</link>
+      <link>https://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</link>
       <pubDate>Thu, 23 Jan 2014 14:33:45 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</guid>
+      <guid>https://www.riospace.web.id/qam-modulation-technique-concept-challenges-and-solutions/</guid>
       
         <description>
 
@@ -107,7 +107,7 @@ Once you added those lines, save the changes and you are all set. Now run your p
 &lt;p&gt;The QAM works by modifying either amplitude, phase or both. For example in 4-QAM (commonly known as QPSK) the only attribute which is modified is the signal phase. Thus, it gives four combinations which are 00, 01, 10, 11 or we can say each wave can carry 2 bits.&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -159,17 +159,17 @@ Once you added those lines, save the changes and you are all set. Now run your p
     
     <item>
       <title>My First Stargazing Report</title>
-      <link>http://www.riospace.web.id/my-first-stargazing-report/</link>
+      <link>https://www.riospace.web.id/my-first-stargazing-report/</link>
       <pubDate>Tue, 07 Jan 2014 16:29:17 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/my-first-stargazing-report/</guid>
+      <guid>https://www.riospace.web.id/my-first-stargazing-report/</guid>
       
         <description>&lt;p&gt;Well, actually I stargazed before, but I didn&amp;rsquo;t do that to really observe stars and constellations. This time was my first time stargazing as a beginner in Astronomy (learning Astronomy is part of my new year resolutions). It was Monday Night, January the 6th of 2014. I started to stargaze around EST 9.00 pm until 10.00 pm. It was cold in Syracuse since the temperature was -12 degree of Celsius, and the wind, that made the weather colder, blew with the speed of 50 kph.After days of studying the book that I just got (&lt;a href=&#34;https://www.goodreads.com/book/show/104139.Nightwatch&#34;&gt;Nightwatch&lt;/a&gt;), hours of constellation and stars reading from simulation software called &lt;a href=&#34;http://stellarium.org/&#34;&gt;Stellarium&lt;/a&gt; and days of cloudy night, I got my chance to try my newly acquired skill because Syracuse&amp;rsquo;s sky was very clear that night.&lt;/p&gt;
 
 &lt;p&gt;The first object I recognized that night was the belt of the great hunter Orion which consist of three aligned stars. Alnitak, Alnilam and Mintaka. Those three stars were named by Moslem&amp;rsquo;s astronomer, Alnitak and Mintaka means the belt while Alnilam means the arrangement or pearl. The name is pretty beautiful isn&amp;rsquo;t it? it is like a real belt which its arrangement (Alnilam) located in the middle of the belt (Alnitak and Mintaka). Alnitak and Alnilam are first magnitude stars (the lower the number, the brighter the star) while Mintak is a second magnitude star. After recognizing the belt it was easy to spot the other low-magnitude stars of Orion Constellation. They are Betelgeuse, Bellatrix, Rigel and Saiph. All have Arabic name except Bellatrix which was taken from Latin word that means the warrioress. Bellatrix is a first magnitude star so it was easy to see it. Next is Betelgeuse, the mighty one or the armpit in Arabic. This zero magnitude star is easy to recognize since its yellowish color is distinguishable from other member of Orion constellation. Coming next is Rigel the foot. It is a zero magnitude star which is 770 light-years distant from the earth but produces energy 50000 time than our sun which make it as the brightest star in Orion constellation. The last but not least is Saiph the sword. This star was dim since it was located near horizon which is polluted by houses light. Saiph is a second magnitude star like Mintaka.&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -226,10 +226,10 @@ Once you added those lines, save the changes and you are all set. Now run your p
     
     <item>
       <title>Berjebraw Forefathers Chord</title>
-      <link>http://www.riospace.web.id/berjebraw-forefathers-chord/</link>
+      <link>https://www.riospace.web.id/berjebraw-forefathers-chord/</link>
       <pubDate>Mon, 21 Oct 2013 12:46:05 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/berjebraw-forefathers-chord/</guid>
+      <guid>https://www.riospace.web.id/berjebraw-forefathers-chord/</guid>
       
         <description>&lt;iframe width=&#34;100%&#34; height=&#34;150&#34; scrolling=&#34;no&#34; frameborder=&#34;no&#34; allow=&#34;autoplay&#34; src=&#34;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56495489&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true&#34;&gt;&lt;/iframe&gt;
 
@@ -291,10 +291,10 @@ a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     
     <item>
       <title>Pie a Professor</title>
-      <link>http://www.riospace.web.id/pie-a-professor/</link>
+      <link>https://www.riospace.web.id/pie-a-professor/</link>
       <pubDate>Thu, 17 Oct 2013 12:40:45 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/pie-a-professor/</guid>
+      <guid>https://www.riospace.web.id/pie-a-professor/</guid>
       
         <description>&lt;p&gt;Today, I saw a strange event in my school. Staffs in iSchool Syracuse University were raising money to be donated for United Way. What they did was providing a booth were people can throw pie to iSchool’s professors face. The price is $5 for student and $10 for faculty, but if you only have $3, they&amp;rsquo;ll take it anyway. I was also offered to throw pie on professor face, but I refused it is not because I didn’t have money, but I think that is not appropriate. I believe that in Asian&amp;rsquo;s culture especially Indonesian, in order to success, student must respect their teacher. Although, even if we (student) are angry to our professor when they gave/asked to much on our assignment or research and gave us a hard exam; all of them are for our own good (I used to be a teacher and also my father is a teacher too). Therefore, we shouldn’t hold any hatred to them. Moreover, throwing a pie in their face to let the hatred out is just not right. In my opinion , that&amp;rsquo;s like organizing prostitution for charity. Do you think that&amp;rsquo;s right? Why I compare it with prostitution? because they are the same in term of selling their honor. That&amp;rsquo;s just what came up in my mind where I saw it. Here are some videos that I took. I would like to hear your opinion as well.&lt;/p&gt;
 
@@ -315,10 +315,10 @@ a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     
     <item>
       <title>Mountain Biking in Syracuse</title>
-      <link>http://www.riospace.web.id/mountain-biking-in-syracuse/</link>
+      <link>https://www.riospace.web.id/mountain-biking-in-syracuse/</link>
       <pubDate>Mon, 23 Sep 2013 12:26:24 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/mountain-biking-in-syracuse/</guid>
+      <guid>https://www.riospace.web.id/mountain-biking-in-syracuse/</guid>
       
         <description>&lt;p&gt;Today I went for Mountain Biking trip which is organized by SUOC. I&amp;rsquo;ve done mountain biking when I was in Indonesia almost every weekend. At first I was wondering where can I have good trails for mountain biking in Syracuse. The area is located near Syracuse University south campus. To give you better sense of direction, look at the map below.&lt;/p&gt;
 
@@ -329,7 +329,7 @@ a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
 &lt;p&gt;The area was so beautiful and pretty different than I had in my hometown Gresik. The trail in Gresik was formed from limestone with brownish soil on top of it which will turn into mud after raining. The scenery is full of green plants, shrubs, grass, bamboo trees. On the other hand, in Syracuse, since it is fall, every leaf is turning into yellow. We have so many maple trees for the wood trails and for the open trails (outside the wood) the terrain was formed from gravel sometimes big rocks and grey soil. The trail was well made so that we have equal up and down trails.&lt;/p&gt;
 
 &lt;p&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -396,10 +396,10 @@ a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     
     <item>
       <title>Canyoneering in Bear Swamp Creek</title>
-      <link>http://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</link>
+      <link>https://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</link>
       <pubDate>Sun, 22 Sep 2013 07:06:28 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</guid>
+      <guid>https://www.riospace.web.id/canyoneering-in-bear-swamp-creek/</guid>
       
         <description>
 
@@ -411,7 +411,7 @@ a thing or two&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
 
 &lt;p&gt;Our entry point for this trip is Carpenter&amp;rsquo;s Fall. It is an overhanging limestone caprock which water flows on the middle of it. Its height is approximately 28 meters.
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -445,15 +445,15 @@ The first person to go down this falls was Nick. Unfortunately when he was in th
     
     <item>
       <title>My First US&#39;s Family Home Visit</title>
-      <link>http://www.riospace.web.id/my-first-uss-family-home-visit/</link>
+      <link>https://www.riospace.web.id/my-first-uss-family-home-visit/</link>
       <pubDate>Thu, 05 Sep 2013 06:26:26 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/my-first-uss-family-home-visit/</guid>
+      <guid>https://www.riospace.web.id/my-first-uss-family-home-visit/</guid>
       
         <description>&lt;p&gt;Yesterday, (4th of August 2013) we went on home visit. We were lucky to have Sue as our host family. Sue&amp;rsquo;s house is quite far from St. John&amp;rsquo;s University since it is located in Ringwood, New Jersey. We took a bus from New York Port Authority Bus Terminal (PABT) to Ringwood. I really enjoy our trip since along the road I saw beautiful trees. Unfortunately, I don&amp;rsquo;t know what kind of trees was it. The trip took approximately 1.5 hours. When we arrived at Ringwood, Sue, Dan (Sue&amp;rsquo;s husband), Pam (Sue&amp;rsquo;s neighbor) and Romero (Pam&amp;rsquo;s husband) already waited for us.&lt;/p&gt;
 
 
-&lt;link rel=&#34;stylesheet&#34; href=&#34;http://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://www.riospace.web.id/css/hugo-easy-gallery.css&#34; /&gt;
 &lt;div class=&#34;box&#34; &gt;
   &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
     &lt;div class=&#34;img&#34;&gt;
@@ -569,10 +569,10 @@ The first person to go down this falls was Nick. Unfortunately when he was in th
     
     <item>
       <title>Enabling New Interface in Ubuntu Server</title>
-      <link>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
+      <link>https://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</link>
       <pubDate>Fri, 06 Jan 2012 05:59:57 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
+      <guid>https://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/</guid>
       
         <description>&lt;p&gt;Tonight, I replaced one of my network interfaces in my computer. I changed the old one, which is Fast Ethernet type, with the new one, which is Gigabit type. I was working in my Ubuntu server 11.04. When I finished replacing the interface. I turned my computer on to see will it work. I found that the new interface didn”t work. When I plugged the cable in, the LED indicator simply didn”t light.&lt;/p&gt;
 
@@ -589,10 +589,10 @@ The first person to go down this falls was Nick. Unfortunately when he was in th
     
     <item>
       <title>XAMPP for Linux Installation</title>
-      <link>http://www.riospace.web.id/xampp-for-linux-installation/</link>
+      <link>https://www.riospace.web.id/xampp-for-linux-installation/</link>
       <pubDate>Sun, 03 Jul 2011 23:34:17 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/xampp-for-linux-installation/</guid>
+      <guid>https://www.riospace.web.id/xampp-for-linux-installation/</guid>
       
         <description>&lt;p&gt;XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.&lt;/p&gt;
 

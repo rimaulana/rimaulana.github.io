@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Interfaces on Live Kaizen life</title>
-    <link>http://www.riospace.web.id/id/tags/interfaces/</link>
-    <description>Recent content in Interfaces on Live Kaizen life</description>
+    <title>Interfaces on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/id/tags/interfaces/</link>
+    <description>Recent content in Interfaces on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <lastBuildDate>Wed, 30 Aug 2017 18:56:51 -0400</lastBuildDate>
     
-	<atom:link href="http://www.riospace.web.id/id/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.riospace.web.id/id/tags/interfaces/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mengurutkan Interface Pada Virtualisasi Router Mikrotik Di Qemu</title>
-      <link>http://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</link>
+      <link>https://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</link>
       <pubDate>Wed, 30 Aug 2017 18:56:51 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</guid>
+      <guid>https://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</guid>
       <description>Pastinya kita semua pernah mengalami pada saat sedang konsennya konfig mikrotik dan telah selesai dan yakin 100% konfig kita benar, lalu saat kita coba ping &amp;hellip; . . gagal. destination host unreachable. Mungkin salah satu penyebabnya adalah interface yang kita gunakan adalah bukan interface yang benar. Saya sering mengalami hal ini saat menggunakan GNS3 dengan, bisa dibilang hampir semua virtualisasi (VirtualBox dan Qemu) kecuali VMware. Cara yang mudah untuk melakukan pemeriksaan, bisa kita lihat dari MAC address interface melalui command</description>
     </item>
     

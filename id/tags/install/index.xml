@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Install on Live Kaizen life</title>
-    <link>http://www.riospace.web.id/id/tags/install/</link>
-    <description>Recent content in Install on Live Kaizen life</description>
+    <title>Install on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/id/tags/install/</link>
+    <description>Recent content in Install on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <lastBuildDate>Wed, 08 Feb 2012 06:07:26 -0400</lastBuildDate>
     
-	<atom:link href="http://www.riospace.web.id/id/tags/install/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.riospace.web.id/id/tags/install/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Instalasi LAMPP Pada Ubuntu Server</title>
-      <link>http://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</link>
+      <link>https://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</link>
       <pubDate>Wed, 08 Feb 2012 06:07:26 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</guid>
+      <guid>https://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</guid>
       <description>Ini pengalaman pribadi saya saat menginstal Ubuntu Server pada komputer saya. Komputer tersebut ingin saya jadikan sebagai web server, tentu saja saya akan butuh untuk menginstal OpenSSH dan LAMPP. Ubuntu Server pada dasarnya menyediakan pilihan software yang ingin kita instal pada komputer kita saat kita melakukan instalasi. Yakni pada saat kita sampai pada halaman software selection.
 Sialnya. Pada saat itu saya tidak tahu bagaimana cara memilih aplikasi yang ingin saya instal.</description>
     </item>
     
     <item>
       <title>Menambahkan Interface Baru Pada Ubuntu Server</title>
-      <link>http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</link>
+      <link>https://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</link>
       <pubDate>Sat, 07 Jan 2012 06:04:33 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
+      <guid>https://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
       <description>Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
 Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
 user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.</description>

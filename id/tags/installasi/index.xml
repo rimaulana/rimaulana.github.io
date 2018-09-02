@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Installasi on Live Kaizen life</title>
-    <link>http://www.riospace.web.id/id/tags/installasi/</link>
-    <description>Recent content in Installasi on Live Kaizen life</description>
+    <title>Installasi on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</title>
+    <link>https://www.riospace.web.id/id/tags/installasi/</link>
+    <description>Recent content in Installasi on Live Life D̶a̶n̶g̶e̶r̶o̶u̶s̶Curiously</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>id</language>
     <lastBuildDate>Sun, 03 Jul 2011 22:34:17 -0400</lastBuildDate>
     
-	<atom:link href="http://www.riospace.web.id/id/tags/installasi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.riospace.web.id/id/tags/installasi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Instalasi XAMPP pada Sistem Operasi Linux</title>
-      <link>http://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</link>
+      <link>https://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</link>
       <pubDate>Sun, 03 Jul 2011 22:34:17 -0400</pubDate>
       
-      <guid>http://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</guid>
+      <guid>https://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</guid>
       <description>XAMPP, kependekan dari X(Linux atau Windows atau Mac OS X atau Solaris), Apache, MySQL, PHP, Perl, merupakan aplikasi yang terdiri dari webserver (Apache), database server (MySQL) serta FTP server (ProFTPD) yang diperuntukkan untuk lingkungan development. Seperti yang disebutkan diatas XAMPP dapat berjalan pada sistem operasi baik berbasis WINDOWS maupun UNIX.
 Pada kesempatan kali ini saya akan menjelaskan cara instalasi XAMPP pada sistem operasi linux. Berikut beberapa spesifikasi yang digunakan.
  Sistem Operasi Ubuntu 11.</description>
