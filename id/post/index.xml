@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/id/post/</link>
+    <description>Recent content in Posts on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 01 Sep 2017 19:06:32 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.riospace.web.id/id/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification</title>
+      <link>http://www.riospace.web.id/id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</link>
+      <pubDate>Fri, 01 Sep 2017 19:06:32 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/</guid>
+      <description>Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)</description>
+    </item>
+    
+    <item>
+      <title>Mengurutkan Interface Pada Virtualisasi Router Mikrotik Di Qemu</title>
+      <link>http://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</link>
+      <pubDate>Wed, 30 Aug 2017 18:56:51 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/</guid>
+      <description>Pastinya kita semua pernah mengalami pada saat sedang konsennya konfig mikrotik dan telah selesai dan yakin 100% konfig kita benar, lalu saat kita coba ping &amp;hellip; . . gagal. destination host unreachable. Mungkin salah satu penyebabnya adalah interface yang kita gunakan adalah bukan interface yang benar. Saya sering mengalami hal ini saat menggunakan GNS3 dengan, bisa dibilang hampir semua virtualisasi (VirtualBox dan Qemu) kecuali VMware. Cara yang mudah untuk melakukan pemeriksaan, bisa kita lihat dari MAC address interface melalui command</description>
+    </item>
+    
+    <item>
+      <title>IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution</title>
+      <link>http://www.riospace.web.id/id/mikrotik-bridging-challenge-solution/</link>
+      <pubDate>Fri, 25 Aug 2017 16:03:29 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/mikrotik-bridging-challenge-solution/</guid>
+      <description>infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut.</description>
+    </item>
+    
+    <item>
+      <title>Bakso Moro Seneng Pak Slamet Trenggalek</title>
+      <link>http://www.riospace.web.id/id/bakso-moro-seneng-pak-slamet-trenggalek/</link>
+      <pubDate>Sat, 25 Aug 2012 06:20:34 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/bakso-moro-seneng-pak-slamet-trenggalek/</guid>
+      <description>Jika anda pecinta kuliner dan kebetulan sedang singgah di kota keripik Trenggalek pastikan anda menyempatkan diri mampir dan mencicipi Bakso Moro Seneng Pak Slamet.
+Hiruk Pikuk pembeli sudah mulai ramai saat saya datang ke lokasi sekitar jam 10 pagi. Warung bakso yang terletak di Jalan Doktor Setiabudi dekat RSUD Doktor Soedomo Trenggalek ini memang selalu ramai pembeli. Usut punya usut ternyata yang menarik banyaknya pembeli ke warung tersebut adalah ke khas-an yang dimiliki oleh warung bakso tersebut yakni gorengan dan sambal baksonya.</description>
+    </item>
+    
+    <item>
+      <title>Instalasi LAMPP Pada Ubuntu Server</title>
+      <link>http://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</link>
+      <pubDate>Wed, 08 Feb 2012 06:07:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/instalasi-lampp-pada-ubuntu-server/</guid>
+      <description>Ini pengalaman pribadi saya saat menginstal Ubuntu Server pada komputer saya. Komputer tersebut ingin saya jadikan sebagai web server, tentu saja saya akan butuh untuk menginstal OpenSSH dan LAMPP. Ubuntu Server pada dasarnya menyediakan pilihan software yang ingin kita instal pada komputer kita saat kita melakukan instalasi. Yakni pada saat kita sampai pada halaman software selection.
+Sialnya. Pada saat itu saya tidak tahu bagaimana cara memilih aplikasi yang ingin saya instal.</description>
+    </item>
+    
+    <item>
+      <title>Menambahkan Interface Baru Pada Ubuntu Server</title>
+      <link>http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</link>
+      <pubDate>Sat, 07 Jan 2012 06:04:33 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
+      <description>Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.</description>
+    </item>
+    
+    <item>
+      <title>Instalasi XAMPP pada Sistem Operasi Linux</title>
+      <link>http://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</link>
+      <pubDate>Sun, 03 Jul 2011 22:34:17 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/instalasi-xampp-pada-sistem-operasi-linux/</guid>
+      <description>XAMPP, kependekan dari X(Linux atau Windows atau Mac OS X atau Solaris), Apache, MySQL, PHP, Perl, merupakan aplikasi yang terdiri dari webserver (Apache), database server (MySQL) serta FTP server (ProFTPD) yang diperuntukkan untuk lingkungan development. Seperti yang disebutkan diatas XAMPP dapat berjalan pada sistem operasi baik berbasis WINDOWS maupun UNIX.
+Pada kesempatan kali ini saya akan menjelaskan cara instalasi XAMPP pada sistem operasi linux. Berikut beberapa spesifikasi yang digunakan.
+ Sistem Operasi Ubuntu 11.</description>
+    </item>
+    
+    <item>
+      <title>Circle Square War</title>
+      <link>http://www.riospace.web.id/id/circle-square-war/</link>
+      <pubDate>Thu, 10 Feb 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/circle-square-war/</guid>
+      <description>Circle Square War adalah sebuah project pada matakuliah Game Development yang saya ikuti semasa saya kuliah di Teknik Informatika ITS. Game ini merupakan pengembangan dari script yang ditulis oleh Philip Radvan mengenai projectile weapons. Berikut adalah game Circle Square War, dimana game ini adalah modifikasi dari script yang ditulis oleh Philip Radvan tersebut.
+ Selamat bermain dan jadilah salah satu high scorer game ini. 😀</description>
+    </item>
+    
+    <item>
+      <title>Tachymeter</title>
+      <link>http://www.riospace.web.id/id/tachymeter/</link>
+      <pubDate>Mon, 31 Jan 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/tachymeter/</guid>
+      <description>watch with tachymeter
+Beberapa bulan yang lalu saya beli arloji baru (maklum sudah jadi kebutuhan). Bentuknya hampir mirip sama gambar diatas. Setelah dibeli, saya teliti (Emang waktu mau beli ndak di teliti?), ternyata di arloji ada tulisan tachymeter. ini apaan sih? lalu arti dari angka-angka 300, 240, 200 s/d 60 itu apa? Setelah menggali informasi dari google, akhirnya saya mendapatkan kesimpulan bahwa mostly tachymeter digunakan sebagai alat bantu untuk memperkirakan kecepatan.</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://www.riospace.web.id/id/hello-world/</link>
+      <pubDate>Sat, 22 Jan 2011 12:08:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/hello-world/</guid>
+      <description>Setelah lama menghilang dari dunia tulis menulis di blog (sekitar 3 tahun) akhirnya saya bertekad untuk membuat blog lagi. Karena saya yakin menulis adalah kegiatan yang bermanfaat (mesti gak bisa menjelaskan secara mendetail). Saya paling malas kalau di suruh menulis, bikin essay dan sebagainya yang berhubungan dengan tulis menulis, maka dari itu saya memaksa diri saya untuk menulis dengan membuat blog yang berbayar alias gak gratis. Supaya saya tambah semangat saat menulis (padahal alasannya sayang kalau ndak diisi soalnya terlanjur dibayar).</description>
+    </item>
+    
+  </channel>
+</rss>

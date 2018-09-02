@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Menambahkan Interface Baru Pada Ubuntu Server - Live Kaizen life</title>
+  
+<link rel="alternate" hreflang="en" href="http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Rio Maulana" />
+  <meta name="description" content="Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya." />
+
+  <meta name="keywords" content="Rio, Maulana, experiment, research" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Menambahkan Interface Baru Pada Ubuntu Server" />
+<meta property="og:description" content="Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.riospace.web.id/id/menambahkan-interface-baru-pada-ubuntu-server/" />
+
+
+
+<meta property="article:published_time" content="2012-01-07T06:04:33-04:00"/>
+
+<meta property="article:modified_time" content="2012-01-07T06:04:33-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Menambahkan Interface Baru Pada Ubuntu Server">
+<meta itemprop="description" content="Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.">
+
+
+<meta itemprop="datePublished" content="2012-01-07T06:04:33-04:00" />
+<meta itemprop="dateModified" content="2012-01-07T06:04:33-04:00" />
+<meta itemprop="wordCount" content="145">
+
+
+
+<meta itemprop="keywords" content="ubuntu,linux,server,install,enable,interface," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Menambahkan Interface Baru Pada Ubuntu Server"/>
+<meta name="twitter:description" content="Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
+Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
+user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/id/" class="logo">Rio&#39;s Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+        
+      </li>
+    <li class="mobile-menu-item">
+        
+        <div class="mobile-menu-parent mobile-menu-item-lang">
+          <span class="mobile-submenu-open"></span>
+          <a href="#">
+            <i class="iconfont icon-globe"></i>
+            Bahasa
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/id/"><strong>Bahasa Indonesia</strong></a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/">English</a>
+              
+            </li>
+          
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/id/" class="logo">
+    
+      Rio's Space
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+
+        
+
+      </li>
+    
+    <li class="menu-item">
+        
+        <a class="menu-item-link menu-parent menu-item-lang" href="#">
+          <i class="iconfont icon-globe"></i>
+          Bahasa Indonesia
+        </a>
+        <ul class="submenu">
+          
+            
+          
+            
+              <li>
+                <a href="http://www.riospace.web.id/">English</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Menambahkan Interface Baru Pada Ubuntu Server</h1>
+      
+<div class="post-meta">
+  
+  <div><a href="http://www.riospace.web.id/enabling-new-interface-in-ubuntu-server/">Read in English: Enabling New Interface in Ubuntu Server</a></div>
+  
+</div>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-01-07 </span>
+        <div class="post-category">
+            <a href="http://www.riospace.web.id/id/categories/networking/"> networking </a>
+            <a href="http://www.riospace.web.id/id/categories/konfigurasi/"> konfigurasi </a>
+            <a href="http://www.riospace.web.id/id/categories/linux/"> linux </a>
+            
+          </div>
+        <span class="more-meta"> 145 kata </span>
+        <span class="more-meta"> waktu baca 1 menit </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Tabel Isi</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).</p>
+
+<p>Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ ifconfig</code></pre></div>
+<p>dan hasilnya sesuai dengan prediksi saya. Seharusnya ada 2 interface yang muncul, namun hanya ada 1 buah interface yang muncul saat saya mengeksekusi perintah tersebut. Setelah beberapa saat mencoba mencari troubleshooter lewat Google. Akhirnya saya menemukannya disini.</p>
+
+<p>Seharusnya interface tersebut dapat dikenali secara otomatis setelah dipasang. Namun apabila anda menemui masalah seperti saya. Anda dapat meng-enable interface anda dengan menghapus sebuah file dengan running perintah berikut pada terminal.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">user@ubuntu:~$ sudo rm /etc/udev/rules.d/70-persistent-net.rules/</code></pre></div>
+<p>Setelah itu anda tinggal me-reboot komputer anda.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Penulis</span>
+    <span class="item-content">Rio Maulana</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Modifikasi Akhir</span>
+    <span class="item-content">2012-01-07</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">Lisensi</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://www.riospace.web.id/id/tags/ubuntu/">ubuntu</a>
+          <a href="http://www.riospace.web.id/id/tags/linux/">linux</a>
+          <a href="http://www.riospace.web.id/id/tags/server/">server</a>
+          <a href="http://www.riospace.web.id/id/tags/install/">install</a>
+          <a href="http://www.riospace.web.id/id/tags/enable/">enable</a>
+          <a href="http://www.riospace.web.id/id/tags/interface/">interface</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/id/instalasi-lampp-pada-ubuntu-server/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Instalasi LAMPP Pada Ubuntu Server</span>
+            <span class="prev-text nav-mobile">Postingan Sebelumnya</span>
+          </a>
+        
+          <a class="next" href="/id/instalasi-xampp-pada-sistem-operasi-linux/">
+            <span class="next-text nav-default">Instalasi XAMPP pada Sistem Operasi Linux</span>
+            <span class="prev-text nav-mobile">Postingan Selanjutnya</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'riospace';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rimaulana@outlook.com" rel="me noopener" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/rim1910" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/riomaulana/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/rimaulana" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://www.riospace.web.id/id/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2011 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Rio Maulana</span></span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

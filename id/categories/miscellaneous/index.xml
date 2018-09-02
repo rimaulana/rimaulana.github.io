@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Miscellaneous on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/id/categories/miscellaneous/</link>
+    <description>Recent content in Miscellaneous on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>id</language>
+    <lastBuildDate>Sat, 22 Jan 2011 12:08:26 -0400</lastBuildDate>
+    
+	<atom:link href="http://www.riospace.web.id/id/categories/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://www.riospace.web.id/id/hello-world/</link>
+      <pubDate>Sat, 22 Jan 2011 12:08:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/hello-world/</guid>
+      <description>Setelah lama menghilang dari dunia tulis menulis di blog (sekitar 3 tahun) akhirnya saya bertekad untuk membuat blog lagi. Karena saya yakin menulis adalah kegiatan yang bermanfaat (mesti gak bisa menjelaskan secara mendetail). Saya paling malas kalau di suruh menulis, bikin essay dan sebagainya yang berhubungan dengan tulis menulis, maka dari itu saya memaksa diri saya untuk menulis dengan membuat blog yang berbayar alias gak gratis. Supaya saya tambah semangat saat menulis (padahal alasannya sayang kalau ndak diisi soalnya terlanjur dibayar).</description>
+    </item>
+    
+  </channel>
+</rss>

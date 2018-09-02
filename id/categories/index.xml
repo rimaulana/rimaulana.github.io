@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Live Kaizen life</title>
+    <link>http://www.riospace.web.id/id/categories/</link>
+    <description>Recent content in Categories on Live Kaizen life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>id</language>
+    
+	<atom:link href="http://www.riospace.web.id/id/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fisika</title>
+      <link>http://www.riospace.web.id/id/categories/fisika/</link>
+      <pubDate>Mon, 31 Jan 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/fisika/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fun</title>
+      <link>http://www.riospace.web.id/id/categories/fun/</link>
+      <pubDate>Sat, 25 Aug 2012 06:20:34 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/fun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Games</title>
+      <link>http://www.riospace.web.id/id/categories/games/</link>
+      <pubDate>Thu, 10 Feb 2011 15:29:47 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/games/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Konfigurasi</title>
+      <link>http://www.riospace.web.id/id/categories/konfigurasi/</link>
+      <pubDate>Fri, 01 Sep 2017 19:06:32 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/konfigurasi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://www.riospace.web.id/id/categories/linux/</link>
+      <pubDate>Wed, 08 Feb 2012 06:07:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Miscellaneous</title>
+      <link>http://www.riospace.web.id/id/categories/miscellaneous/</link>
+      <pubDate>Sat, 22 Jan 2011 12:08:26 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/miscellaneous/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>http://www.riospace.web.id/id/categories/networking/</link>
+      <pubDate>Fri, 01 Sep 2017 19:06:32 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel</title>
+      <link>http://www.riospace.web.id/id/categories/travel/</link>
+      <pubDate>Sat, 25 Aug 2012 06:20:34 -0400</pubDate>
+      
+      <guid>http://www.riospace.web.id/id/categories/travel/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,31 +6,10 @@
     <description>Recent content in Linux on Live Kaizen life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Feb 2012 06:07:26 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 03 Jul 2011 23:34:17 -0400</lastBuildDate>
     
 	<atom:link href="http://www.riospace.web.id/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Instalasi LAMPP Pada Ubuntu Server</title>
-      <link>http://www.riospace.web.id/instalasi-lampp-pada-ubuntu-server/</link>
-      <pubDate>Wed, 08 Feb 2012 06:07:26 -0400</pubDate>
-      
-      <guid>http://www.riospace.web.id/instalasi-lampp-pada-ubuntu-server/</guid>
-      <description>Ini pengalaman pribadi saya saat menginstal Ubuntu Server pada komputer saya. Komputer tersebut ingin saya jadikan sebagai web server, tentu saja saya akan butuh untuk menginstal OpenSSH dan LAMPP. Ubuntu Server pada dasarnya menyediakan pilihan software yang ingin kita instal pada komputer kita saat kita melakukan instalasi. Yakni pada saat kita sampai pada halaman software selection.
-Sialnya. Pada saat itu saya tidak tahu bagaimana cara memilih aplikasi yang ingin saya instal.</description>
-    </item>
-    
-    <item>
-      <title>Menambahkan Interface Baru Pada Ubuntu Server</title>
-      <link>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</link>
-      <pubDate>Sat, 07 Jan 2012 06:04:33 -0400</pubDate>
-      
-      <guid>http://www.riospace.web.id/menambahkan-interface-baru-pada-ubuntu-server/</guid>
-      <description>Ceritanya kemarin malam aku ganti salah satu network interface pada Ubuntu Server-ku (Ubuntu 11.04 Natty Narwhal). Niatnya adalah upgrade dari Fast Ethernet jadi Gigabit Ethernet. Setelah aku ganti, aku turned on komputerku. Alhasil indikator LED pada interface yang baru mati (Normalnya akan nyala saat komputer sedang on dan interface terhubung ke jaringan).
-Untuk meyakinkan 100% bahwa interface baru tersebut tidak bekerja. Aku jalankan perintah
-user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.</description>
-    </item>
     
     <item>
       <title>XAMPP for Linux Installation</title>
@@ -40,17 +19,6 @@ user@ubuntu:~$ ifconfig dan hasilnya sesuai dengan prediksi saya.</description>
       <guid>http://www.riospace.web.id/xampp-for-linux-installation/</guid>
       <description>XAMPP, an abbreviation for X (Linux or Windows or Mac OS X or Solaris), Apache, MySQL, PHP, Perl, is an application composed of a web service (Apache), a database server (MySQL) and a FTP server (ProFTPD) which is intended for development environment. As mentioned above, XAMPP runs both in Windows and UNIX based operating systems.
 This chance I will explain how to install XAMPP on Linux operating systems. Here are the specifications I use in this tutorial.</description>
-    </item>
-    
-    <item>
-      <title>Instalasi XAMPP pada Sistem Operasi Linux</title>
-      <link>http://www.riospace.web.id/instalasi-xampp-pada-sistem-operasi-linux/</link>
-      <pubDate>Sun, 03 Jul 2011 22:34:17 -0400</pubDate>
-      
-      <guid>http://www.riospace.web.id/instalasi-xampp-pada-sistem-operasi-linux/</guid>
-      <description>XAMPP, kependekan dari X(Linux atau Windows atau Mac OS X atau Solaris), Apache, MySQL, PHP, Perl, merupakan aplikasi yang terdiri dari webserver (Apache), database server (MySQL) serta FTP server (ProFTPD) yang diperuntukkan untuk lingkungan development. Seperti yang disebutkan diatas XAMPP dapat berjalan pada sistem operasi baik berbasis WINDOWS maupun UNIX.
-Pada kesempatan kali ini saya akan menjelaskan cara instalasi XAMPP pada sistem operasi linux. Berikut beberapa spesifikasi yang digunakan.
- Sistem Operasi Ubuntu 11.</description>
     </item>
     
   </channel>

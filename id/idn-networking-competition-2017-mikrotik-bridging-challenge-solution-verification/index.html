@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification - Live Kaizen life</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Rio Maulana" />
+  <meta name="description" content="Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)" />
+
+  <meta name="keywords" content="Rio, Maulana, experiment, research" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://www.riospace.web.id/id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification" />
+<meta property="og:description" content="Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.riospace.web.id/id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/" />
+
+
+
+<meta property="article:published_time" content="2017-09-01T19:06:32-04:00"/>
+
+<meta property="article:modified_time" content="2017-09-01T19:06:32-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification">
+<meta itemprop="description" content="Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)">
+
+
+<meta itemprop="datePublished" content="2017-09-01T19:06:32-04:00" />
+<meta itemprop="dateModified" content="2017-09-01T19:06:32-04:00" />
+<meta itemprop="wordCount" content="1822">
+
+
+
+<meta itemprop="keywords" content="idn,competition,mikrotik,challenges,routeros,vlan," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification"/>
+<meta name="twitter:description" content="Postingan kali ini adalah lanjutan dari postingan IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:
+ GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0 Qemu-2.4.0 running on Local Windows (64-bit) Mikrotik CHR 6.40.1  Topologi yang saya gunakan adalah sebagai berikut:
+Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/id/" class="logo">Rio&#39;s Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+        
+      </li>
+    <li class="mobile-menu-item">
+        
+        <div class="mobile-menu-parent mobile-menu-item-lang">
+          <span class="mobile-submenu-open"></span>
+          <a href="#">
+            <i class="iconfont icon-globe"></i>
+            Bahasa
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/id/"><strong>Bahasa Indonesia</strong></a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/">English</a>
+              
+            </li>
+          
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/id/" class="logo">
+    
+      Rio's Space
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+
+        
+
+      </li>
+    
+    <li class="menu-item">
+        
+        <a class="menu-item-link menu-parent menu-item-lang" href="#">
+          <i class="iconfont icon-globe"></i>
+          Bahasa Indonesia
+        </a>
+        <ul class="submenu">
+          
+            
+          
+            
+              <li>
+                <a href="http://www.riospace.web.id/">English</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2017-09-01 </span>
+        <div class="post-category">
+            <a href="http://www.riospace.web.id/id/categories/networking/"> networking </a>
+            <a href="http://www.riospace.web.id/id/categories/konfigurasi/"> konfigurasi </a>
+            
+          </div>
+        <span class="more-meta"> 1822 kata </span>
+        <span class="more-meta"> waktu baca 9 menit </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Tabel Isi</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#lantai-1">Lantai 1</a>
+<ul>
+<li><a href="#ping-dari-r-l1-ke-core-jkt">Ping dari R-L1 ke Core-JKT</a></li>
+<li><a href="#pc1-ip-dhcp-request">PC1 IP DHCP Request</a></li>
+<li><a href="#pc1-ping-ke-gateway">PC1 Ping  ke Gateway</a></li>
+<li><a href="#pc2-ip-dhcp-request">PC2 IP DHCP Request</a></li>
+<li><a href="#pc2-ping-ke-gateway">PC2 Ping ke Gateway</a></li>
+<li><a href="#pc3-ip-dhcp-request">PC3 IP DHCP Request</a></li>
+<li><a href="#pc3-ping-ke-gateway">PC3 Ping ke Gateway</a></li>
+<li><a href="#traceroute-dari-r-l1-ke-pc1">Traceroute dari R-L1 ke PC1</a></li>
+</ul></li>
+<li><a href="#lantai-2">LANTAI 2</a>
+<ul>
+<li><a href="#ping-dari-r-l2-1-ke-core-jkt">Ping dari R-L2-1 ke Core-JKT</a></li>
+<li><a href="#pc4-ip-dhcp-request">PC4 IP DHCP request</a></li>
+<li><a href="#pc4-ping-ke-gateway">PC4 ping ke gateway</a></li>
+<li><a href="#pc5-ip-dhcp-request">PC5 IP DHCP request</a></li>
+<li><a href="#pc5-ping-ke-gateway">PC5 ping ke gateway</a></li>
+<li><a href="#traceroute-dari-r-l2-1-ke-pc1">Traceroute dari R-L2-1 ke PC1</a></li>
+<li><a href="#ping-dari-r-l2-2-ke-core-jkt">Ping dari R-L2-2 ke Core-JKT</a></li>
+<li><a href="#pc6-ip-dhcp-request">PC6 IP DHCP request</a></li>
+<li><a href="#pc6-ping-ke-gateway">PC6 ping ke gateway</a></li>
+<li><a href="#pc7-ip-dhcp-request">PC7 IP DHCP request</a></li>
+<li><a href="#pc7-ping-ke-gateway">PC7 ping ke gateway</a></li>
+<li><a href="#traceroute-dari-r-l2-2-ke-pc1">Traceroute dari R-L2-2 ke PC1</a></li>
+</ul></li>
+<li><a href="#lantai-3">LANTAI 3</a>
+<ul>
+<li><a href="#ping-dari-r-l3-ke-core-jkt">Ping dari R-L3 ke Core-JKT</a></li>
+<li><a href="#pc8-ip-dhcp-request">PC8 IP DHCP request</a></li>
+<li><a href="#pc8-ping-ke-gateway">PC8 ping ke gateway</a></li>
+<li><a href="#pc9-ip-dhcp-request">PC9 IP DHCP request</a></li>
+<li><a href="#pc9-ping-ke-gateway">PC9 ping ke gateway</a></li>
+<li><a href="#traceroute-dari-r-l3-ke-pc1">Traceroute dari R-L3 ke PC1</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>Postingan kali ini adalah lanjutan dari postingan <a href="/mikrotik-bridging-challenge-solution">IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution</a>, pastikan kamu telah membaca postingan tersebut, kalau tidak saya jamin pasti akan sedikit bingung. Simulasi yang akan saya paparkan menggunakan teknologi sebagai berikut:</p>
+
+<ul>
+<li>GNS3 versi 1.5.2 on Windows (64-bit) with Python 3.5.1 Qt 5.6.0</li>
+<li>Qemu-2.4.0 running on Local Windows (64-bit)</li>
+<li>Mikrotik CHR 6.40.1</li>
+</ul>
+
+<p>Topologi yang saya gunakan adalah sebagai berikut:</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_jakarta_gns3.png" />
+    </div>
+    <a href="idn_networking_2017_jakarta_gns3.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Pertama yang akan kita lakukan adalah verifikasi dari konektifitas dari tiap lantai (table of content ada di samping kanan)</p>
+
+<h1 id="lantai-1">Lantai 1</h1>
+
+<p>Pada lantai 1, test yang akan kita lakukan adalah:</p>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Check List</th>
+<th>Tujuan</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Ping dari R-L1 ke Core-JKT</td>
+<td>Verifikasi konektifitas IP dari R-L1 ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>PC1 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 10 di Core-JKT berjalan dan dapat terdistribusi di R-L1</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>PC1 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>PC2 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 20 di Core-JKT berjalan dan dapat terdistribusi di R-L1</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>PC2 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>PC3 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L1</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>PC3 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Traceroute dari R-L1 ke PC1</td>
+<td>Verifikasi bahwa default gateway R-L1 bekerja dengan baik untuk koneksi internet</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ping-dari-r-l1-ke-core-jkt">Ping dari R-L1 ke Core-JKT</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L1] &gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 1ms  
+    3 192.168.99.1                               56  64 1ms  
+    4 192.168.99.1                               56  64 2ms  
+    sent=5 received=5 packet-loss=0% min-rtt=1ms avg-rtt=2ms max-rtt=4ms </code></pre></div>
+<h2 id="pc1-ip-dhcp-request">PC1 IP DHCP Request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC1&gt; ip dhcp
+DORA IP 192.168.10.254/24 GW 192.168.10.1
+
+PC1&gt; show ip
+NAME        : PC1[1]
+IP/MASK     : 192.168.10.254/24
+GATEWAY     : 192.168.10.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.10.1
+DHCP LEASE  : 462, 600/300/525
+MAC         : 00:50:79:66:68:00
+LPORT       : 10001
+RHOST:PORT  : 192.168.38.1:10013
+MTU:        : 1500</code></pre></div>
+<h2 id="pc1-ping-ke-gateway">PC1 Ping  ke Gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC1&gt; ping 192.168.10.1
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=64 time=3.567 ms</code></pre></div>
+<h2 id="pc2-ip-dhcp-request">PC2 IP DHCP Request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC2&gt; ip dhcp
+DORA IP 192.168.20.252/24 GW 192.168.20.1
+
+PC2&gt; show ip
+NAME        : PC2[1]
+IP/MASK     : 192.168.20.252/24
+GATEWAY     : 192.168.20.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.20.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:03
+LPORT       : 10002
+RHOST:PORT  : 192.168.38.1:10016
+MTU:        : 1500</code></pre></div>
+<h2 id="pc2-ping-ke-gateway">PC2 Ping ke Gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC2&gt; ping 192.168.20.1
+84 bytes from 192.168.20.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.20.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.20.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.20.1 icmp_seq=4 ttl=64 time=3.567 ms</code></pre></div>
+<h2 id="pc3-ip-dhcp-request">PC3 IP DHCP Request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC3&gt; ip dhcp
+DORA IP 192.168.30.254/24 GW 192.168.30.1
+
+PC3&gt; show ip
+NAME        : PC3[1]
+IP/MASK     : 192.168.30.254/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:01
+LPORT       : 10008
+RHOST:PORT  : 192.168.38.1:10034
+MTU:        : 1500</code></pre></div>
+<h2 id="pc3-ping-ke-gateway">PC3 Ping ke Gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC3&gt; ping 192.168.10.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=3.091 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=2.364 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=3.546 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=3.567 ms</code></pre></div>
+<h2 id="traceroute-dari-r-l1-ke-pc1">Traceroute dari R-L1 ke PC1</h2>
+
+<p>Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L1 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L1 untuk membuktikan bahwa default route R-L1 berjalan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L1] &gt; /tool traceroute 192.168.10.254
+# ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+1 192.168.99.1                       0%   17   2.2ms     2.2     1.7     5.1     0.8
+2 192.168.10.254                     0%   17   4.1ms       8     2.9    69.7    15.4</code></pre></div>
+<h1 id="lantai-2">LANTAI 2</h1>
+
+<p>Pada lantai 2, test yang akan kita lakukan adalah:</p>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Check List</th>
+<th>Tujuan</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Ping dari R-L2-1 ke Core-JKT</td>
+<td>Verifikasi konektifitas IP dari R-L2-1 ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>PC4 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 10 di Core-JKT berjalan dan dapat terdistribusi di R-L2-1</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>PC4 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>PC5 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 20 di Core-JKT berjalan dan dapat terdistribusi di R-L2-1</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>PC5 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Traceroute dari R-L2-1 ke PC1</td>
+<td>Verifikasi bahwa default gateway R-L2-1 bekerja dengan baik untuk koneksi internet</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Ping dari R-L2-2 ke Core-JKT</td>
+<td>Verifikasi konektifitas IP dari R-L2-2 ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>PC6 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L2-2</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>PC6 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>PC7 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 40 di Core-JKT berjalan dan dapat terdistribusi di R-L2-2</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>PC7 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Traceroute dari R-L2-2 ke PC1</td>
+<td>Verifikasi bahwa default gateway R-L2-2 bekerja dengan baik untuk koneksi internet</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ping-dari-r-l2-1-ke-core-jkt">Ping dari R-L2-1 ke Core-JKT</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L2-1] &gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 1ms  
+    3 192.168.99.1                               56  64 1ms  
+    4 192.168.99.1                               56  64 1ms  
+    sent=5 received=5 packet-loss=0% min-rtt=1ms avg-rtt=1ms max-rtt=4ms </code></pre></div>
+<h2 id="pc4-ip-dhcp-request">PC4 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC4&gt; ip dhcp
+DORA IP 192.168.10.253/24 GW 192.168.10.1
+ 
+PC4&gt; show ip
+NAME        : PC4[1]
+IP/MASK     : 192.168.10.253/24
+GATEWAY     : 192.168.10.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.10.1
+DHCP LEASE  : 591, 600/300/525
+MAC         : 00:50:79:66:68:02
+LPORT       : 10003
+RHOST:PORT  : 192.168.38.1:10019
+MTU:        : 1500</code></pre></div>
+<h2 id="pc4-ping-ke-gateway">PC4 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC4&gt; ping 192.168.10.1
+84 bytes from 192.168.10.1 icmp_seq=1 ttl=64 time=3.284 ms
+84 bytes from 192.168.10.1 icmp_seq=2 ttl=64 time=2.883 ms
+84 bytes from 192.168.10.1 icmp_seq=3 ttl=64 time=2.897 ms
+84 bytes from 192.168.10.1 icmp_seq=4 ttl=64 time=2.469 ms</code></pre></div>
+<h2 id="pc5-ip-dhcp-request">PC5 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC5&gt; ip dhcp
+DORA IP 192.168.20.251/24 GW 192.168.20.1
+ 
+PC5&gt; show ip
+NAME        : PC5[1]
+IP/MASK     : 192.168.20.251/24
+GATEWAY     : 192.168.20.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.20.1
+DHCP LEASE  : 586, 600/300/525
+MAC         : 00:50:79:66:68:04
+LPORT       : 10000
+RHOST:PORT  : 192.168.38.1:10010
+MTU:        : 1500</code></pre></div>
+<h2 id="pc5-ping-ke-gateway">PC5 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC5&gt; ping 192.168.20.1
+84 bytes from 192.168.20.1 icmp_seq=1 ttl=64 time=3.758 ms
+84 bytes from 192.168.20.1 icmp_seq=2 ttl=64 time=3.278 ms
+84 bytes from 192.168.20.1 icmp_seq=3 ttl=64 time=2.962 ms
+84 bytes from 192.168.20.1 icmp_seq=4 ttl=64 time=3.118 ms</code></pre></div>
+<h2 id="traceroute-dari-r-l2-1-ke-pc1">Traceroute dari R-L2-1 ke PC1</h2>
+
+<p>Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L2-1 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L2-1 untuk membuktikan bahwa default route R-L2-1 berjalan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L2-1] &gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+ 1 192.168.99.1                       0%    6     2ms     2.6     1.9     5.5     1.3
+ 2 192.168.10.254                     0%    6   3.5ms    12.8     3.5    54.7    18.8</code></pre></div>
+<h2 id="ping-dari-r-l2-2-ke-core-jkt">Ping dari R-L2-2 ke Core-JKT</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L2-2] &gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 5ms  
+    1 192.168.99.1                               56  64 3ms  
+    2 192.168.99.1                               56  64 4ms  
+    3 192.168.99.1                               56  64 3ms  
+    sent=4 received=4 packet-loss=0% min-rtt=3ms avg-rtt=3ms max-rtt=5ms</code></pre></div>
+<h2 id="pc6-ip-dhcp-request">PC6 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC6&gt; ip dhcp
+DORA IP 192.168.30.253/24 GW 192.168.30.1
+ 
+PC6&gt; show ip
+NAME        : PC6[1]
+IP/MASK     : 192.168.30.253/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 598, 600/300/525
+MAC         : 00:50:79:66:68:05
+LPORT       : 10004
+RHOST:PORT  : 192.168.38.1:10022
+MTU:        : 1500</code></pre></div>
+<h2 id="pc6-ping-ke-gateway">PC6 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC6&gt; ping 192.168.30.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=4.549 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=5.146 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=7.167 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=5.634 ms</code></pre></div>
+<h2 id="pc7-ip-dhcp-request">PC7 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC7&gt; ip dhcp
+DORA IP 192.168.40.253/24 GW 192.168.40.1
+ 
+PC7&gt; show ip
+NAME        : PC7[1]
+IP/MASK     : 192.168.40.253/24
+GATEWAY     : 192.168.40.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.40.1
+DHCP LEASE  : 598, 600/300/525
+MAC         : 00:50:79:66:68:06
+LPORT       : 10005
+RHOST:PORT  : 192.168.38.1:10025
+MTU:        : 1500</code></pre></div>
+<h2 id="pc7-ping-ke-gateway">PC7 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC7&gt; ping 192.168.40.1
+84 bytes from 192.168.40.1 icmp_seq=1 ttl=64 time=5.126 ms
+84 bytes from 192.168.40.1 icmp_seq=2 ttl=64 time=3.970 ms
+84 bytes from 192.168.40.1 icmp_seq=3 ttl=64 time=4.770 ms
+84 bytes from 192.168.40.1 icmp_seq=4 ttl=64 time=6.111 ms</code></pre></div>
+<h2 id="traceroute-dari-r-l2-2-ke-pc1">Traceroute dari R-L2-2 ke PC1</h2>
+
+<p>Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L2-2 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L1 untuk membuktikan bahwa default route R-L2-2 berjalan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L2-2] &gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS                                                                            
+ 1 192.168.99.1                       0%    6   3.5ms     4.2     3.5     4.7     0.5                                                                                   
+ 2 192.168.10.254                     0%    6   7.2ms     6.5     5.2     7.2     0.7</code></pre></div>
+<h1 id="lantai-3">LANTAI 3</h1>
+
+<p>Pada lantai 3, test yang akan kita lakukan adalah:</p>
+
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Check List</th>
+<th>Tujuan</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>Ping dari R-L3 ke Core-JKT</td>
+<td>Verifikasi konektifitas IP dari R-L3 ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>PC8 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 30 di Core-JKT berjalan dan dapat terdistribusi di R-L3</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>PC8 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>PC9 IP DHCP request</td>
+<td>Verikasi apakah DHCP server untuk VLAN 40 di Core-JKT berjalan dan dapat terdistribusi di R-L3</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>PC9 ping ke gateway</td>
+<td>Verifikasi konektifitas IP ke Core-JKT</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Traceroute dari R-L3 ke PC1    Verifikasi bahwa default gateway R-L3 bekerja dengan baik untuk koneksi internet</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="ping-dari-r-l3-ke-core-jkt">Ping dari R-L3 ke Core-JKT</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L3] &gt; ping 192.168.99.1
+  SEQ HOST                                     SIZE TTL TIME  STATUS
+    0 192.168.99.1                               56  64 4ms  
+    1 192.168.99.1                               56  64 2ms  
+    2 192.168.99.1                               56  64 2ms  
+    3 192.168.99.1                               56  64 1ms  
+    sent=4 received=4 packet-loss=0% min-rtt=1ms avg-rtt=2ms max-rtt=4ms</code></pre></div>
+<h2 id="pc8-ip-dhcp-request">PC8 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC8&gt; ip dhcp
+DORA IP 192.168.30.252/24 GW 192.168.30.1
+ 
+PC8&gt; show ip
+NAME        : PC8[1]
+IP/MASK     : 192.168.30.252/24
+GATEWAY     : 192.168.30.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.30.1
+DHCP LEASE  : 597, 600/300/525
+MAC         : 00:50:79:66:68:07
+LPORT       : 10006
+RHOST:PORT  : 192.168.38.1:10028
+MTU:        : 1500</code></pre></div>
+<h2 id="pc8-ping-ke-gateway">PC8 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC8&gt; ping 192.168.30.1
+84 bytes from 192.168.30.1 icmp_seq=1 ttl=64 time=2.944 ms
+84 bytes from 192.168.30.1 icmp_seq=2 ttl=64 time=3.126 ms
+84 bytes from 192.168.30.1 icmp_seq=3 ttl=64 time=6.054 ms
+84 bytes from 192.168.30.1 icmp_seq=4 ttl=64 time=3.601 ms</code></pre></div>
+<h2 id="pc9-ip-dhcp-request">PC9 IP DHCP request</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC9&gt; ip dhcp
+DORA IP 192.168.40.252/24 GW 192.168.40.1
+ 
+PC9&gt; show ip
+NAME        : PC9[1]
+IP/MASK     : 192.168.40.252/24
+GATEWAY     : 192.168.40.1
+DNS         : 8.8.8.8  
+DHCP SERVER : 192.168.40.1
+DHCP LEASE  : 595, 600/300/525
+MAC         : 00:50:79:66:68:08
+LPORT       : 10007
+RHOST:PORT  : 192.168.38.1:10031
+MTU:        : 1500</code></pre></div>
+<h2 id="pc9-ping-ke-gateway">PC9 ping ke gateway</h2>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">PC9&gt; ping 192.168.40.1
+84 bytes from 192.168.40.1 icmp_seq=1 ttl=64 time=2.776 ms
+84 bytes from 192.168.40.1 icmp_seq=2 ttl=64 time=2.534 ms
+84 bytes from 192.168.40.1 icmp_seq=3 ttl=64 time=2.552 ms
+84 bytes from 192.168.40.1 icmp_seq=4 ttl=64 time=3.132 ms</code></pre></div>
+<h2 id="traceroute-dari-r-l3-ke-pc1">Traceroute dari R-L3 ke PC1</h2>
+
+<p>Karena pada tahap ini koneksi ke internet belum terbangun, untuk membuktikan bahwa apabila Core-JKT sudah terkonfigurasi internet maka R-L3 dapat pula terhubung ke internet, kita akan mecoba mengkontak alamat IP diluar subnet management R-L3 untuk membuktikan bahwa default route R-L3 berjalan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">[admin@R-L3] &gt; /tool traceroute 192.168.10.254
+ # ADDRESS                          LOSS SENT    LAST     AVG    BEST   WORST STD-DEV STATUS
+ 1 192.168.99.1                       0%    5   2.2ms     2.1     1.7     2.5     0.3
+ 2 192.168.10.254                     0%    5   4.3ms     4.8     4.1     5.2     0.5</code></pre></div>
+<p>Demikian hasil verifikasi dari konfigurasi di IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution. Kalau ada pertanyaan atau kurang jelas, tolong jangan sungkan untuk meninggalkan pertanyaan melalui komentar. Terima kasih.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Penulis</span>
+    <span class="item-content">Rio Maulana</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Modifikasi Akhir</span>
+    <span class="item-content">2017-09-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">Lisensi</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://www.riospace.web.id/id/tags/idn/">idn</a>
+          <a href="http://www.riospace.web.id/id/tags/competition/">competition</a>
+          <a href="http://www.riospace.web.id/id/tags/mikrotik/">mikrotik</a>
+          <a href="http://www.riospace.web.id/id/tags/challenges/">challenges</a>
+          <a href="http://www.riospace.web.id/id/tags/routeros/">routeros</a>
+          <a href="http://www.riospace.web.id/id/tags/vlan/">vlan</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/">
+            <span class="next-text nav-default">Mengurutkan Interface Pada Virtualisasi Router Mikrotik Di Qemu</span>
+            <span class="prev-text nav-mobile">Postingan Selanjutnya</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'riospace';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rimaulana@outlook.com" rel="me noopener" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/rim1910" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/riomaulana/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/rimaulana" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://www.riospace.web.id/id/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2011 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Rio Maulana</span></span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>

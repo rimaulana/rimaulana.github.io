@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="id" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution - Live Kaizen life</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Rio Maulana" />
+  <meta name="description" content="infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut." />
+
+  <meta name="keywords" content="Rio, Maulana, experiment, research" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="canonical" href="http://www.riospace.web.id/id/mikrotik-bridging-challenge-solution/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution" />
+<meta property="og:description" content="infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.riospace.web.id/id/mikrotik-bridging-challenge-solution/" />
+
+
+
+<meta property="article:published_time" content="2017-08-25T16:03:29-04:00"/>
+
+<meta property="article:modified_time" content="2017-08-25T16:03:29-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution">
+<meta itemprop="description" content="infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut.">
+
+
+<meta itemprop="datePublished" content="2017-08-25T16:03:29-04:00" />
+<meta itemprop="dateModified" content="2017-08-25T16:03:29-04:00" />
+<meta itemprop="wordCount" content="1331">
+
+
+
+<meta itemprop="keywords" content="idn,competition,mikrotik,challenges,routeros,vlan," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution"/>
+<meta name="twitter:description" content="infoSebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu untuk memastikannya
+Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link berikut."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/id/" class="logo">Rio&#39;s Space</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+        
+      </li>
+    <li class="mobile-menu-item">
+        
+        <div class="mobile-menu-parent mobile-menu-item-lang">
+          <span class="mobile-submenu-open"></span>
+          <a href="#">
+            <i class="iconfont icon-globe"></i>
+            Bahasa
+          </a>
+        </div>
+        <ul class="mobile-submenu-list">
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/id/"><strong>Bahasa Indonesia</strong></a>
+              
+            </li>
+          
+            <li>
+              
+                <a href="http://www.riospace.web.id/">English</a>
+              
+            </li>
+          
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/id/" class="logo">
+    
+      Rio's Space
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/post/">Arsip</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/tags/">Tag</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/categories/">Kategori</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://www.riospace.web.id/id/about/">Tentang Penulis</a>
+          
+
+        
+
+      </li>
+    
+    <li class="menu-item">
+        
+        <a class="menu-item-link menu-parent menu-item-lang" href="#">
+          <i class="iconfont icon-globe"></i>
+          Bahasa Indonesia
+        </a>
+        <ul class="submenu">
+          
+            
+          
+            
+              <li>
+                <a href="http://www.riospace.web.id/">English</a>
+              </li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2017-08-25 </span>
+        <div class="post-category">
+            <a href="http://www.riospace.web.id/id/categories/networking/"> networking </a>
+            <a href="http://www.riospace.web.id/id/categories/konfigurasi/"> konfigurasi </a>
+            
+          </div>
+        <span class="more-meta"> 1331 kata </span>
+        <span class="more-meta"> waktu baca 7 menit </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Tabel Isi</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#core-jkt">Core-JKT</a></li>
+<li><a href="#r-l1">R-L1</a></li>
+<li><a href="#r-l2-1">R-L2-1</a></li>
+<li><a href="#r2-l2-2">R2-L2-2</a></li>
+<li><a href="#r-l3">R-L3</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<div class="shortcode-notice info">
+  <div class="shortcode-notice-title info">
+    
+      info
+    
+  </div>
+  <p>Sebelum kamu melakukan copy paste konfigurasi yang akan saya paparkan dalam postingan ini, pastikan penamaan interface pada virtualisai router yang kamu gunakan sudah benar. Kamu bisa ikuti tutorial <a href="/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/">Mengurutkan Interface pada Virtualisasi Router Mikrotik di Qemu</a> untuk memastikannya</p>
+
+</div>
+
+
+<p>Pada post kali ini saya berusaha memaparkan pendekatan yang saya gunakan untuk menyelesaikan soal bridging pada kompetisi IDN networking 2017 untuk materi superlab Mikrotik, dimana soal dapat dapat di unduh pada link <a href="idn_networking_2017_mikrotik_superlab.pdf">berikut</a>. Untuk soal bridging (no 2 s/d 6), kita akan fokus pada topologi jaringan di kantor pusat Jakarta. Adapun topologinya adalah sebagai berikut.</p>
+
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_topology_soal.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_topology_soal.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Kantor pusat Jakarta juga memiliki informasi VLAN sebagai berikut:</p>
+
+<table>
+<thead>
+<tr>
+<th>VLAN ID</th>
+<th>Network</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>10</td>
+<td>192.168.10.0/24</td>
+<td>Guest</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>192.168.20.0/24</td>
+<td>Karyawan</td>
+</tr>
+
+<tr>
+<td>30</td>
+<td>192.168.30.0/24</td>
+<td>Admin</td>
+</tr>
+
+<tr>
+<td>40</td>
+<td>192.168.40.0/24</td>
+<td>Network Admin</td>
+</tr>
+
+<tr>
+<td>99</td>
+<td>192.168.99.0/24</td>
+<td>Management</td>
+</tr>
+</tbody>
+</table>
+
+<p>Pendekatan yang saya paparkan dalam panduan ini belum tentu solusi yang paling baik namun saya berusaha mengikuti standar penamaan yang di jelaskan di manual yang berada di website mikrotik. Maka dari itu logical topology yang saya propose adalah sebagai berikut:</p>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_topology_logical.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_topology_logical.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Dari topologi diatas dapat kita lihat bahwa semua VLAN bermuara ke router Core-JKT melalui path yang jelas dari ujung ke ujung. Sebagai contoh untuk VLAN 99 dari R-L2-2 dapat menuju ke Core-JKT dikarenakan ada path yang berkelanjutan dari R-L2-2 ke Core-JKT melaui R-L2-1 (dapat dilihat dari path warna hitam). Selanjutnya mari kita masuk ke tiap-tiap router untuk membedah konfigurasi yang perlu kita set di tiap router.</p>
+
+<h1 id="core-jkt">Core-JKT</h1>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_core-jkt.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_core-jkt.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Core-JKT sebagai pusat dari semua router yang ada di kantor Jakarta harus memiliki semua konfigurasi VLAN yang ada di kantor Jakarta, dari gambar di atas, dapat kita simpulkan bahwa untuk Core-JKT kita perlu mengkonfigurasi router dengan membuat bridge and VLAN sebagai berikut:</p>
+
+<div style="overflow-x: auto;">
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td valign="top" align="center"><strong>Bridge</strong>
+<ul>
+    <li><strong><span style="color: #0000ff;">bridge-vlan10</span></strong></li>
+    <li><strong><span style="color: #008000;">bridge-vlan20</span></strong></li>
+    <li><strong><span style="color: #ff9900;">bridge-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">bridge-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether3</strong>
+<ul>
+    <li><span style="color: #0000ff;"><strong>ether3-vlan10</strong></span></li>
+    <li><span style="color: #008000;"><strong>ether3-vlan20</strong></span></li>
+    <li><span style="color: #ff9900;"><strong>ether3-vlan30</strong></span></li>
+    <li><strong>ether3-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether4</strong>
+<ul>
+    <li><span style="color: #0000ff;"><strong>ether4-vlan10</strong></span></li>
+    <li><span style="color: #008000;"><strong>ether4-vlan20</strong></span></li>
+    <li><span style="color: #ff9900;"><strong>ether4-vlan30</strong></span></li>
+    <li><span style="color: #ff00ff;"><strong>ether4-vlan40</strong></span></li>
+    <li><strong>ether4-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether5</strong>
+<ul>
+    <li><span style="color: #ff9900;"><strong>ether5-vlan30</strong></span></li>
+    <li><span style="color: #ff00ff;"><strong>ether5-vlan40</strong></span></li>
+    <li><strong>ether5-vlan99</strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+/interface vlan
+add interface=ether3 name=ether3-vlan10 vlan-id=10
+add interface=ether3 name=ether3-vlan20 vlan-id=20
+add interface=ether3 name=ether3-vlan30 vlan-id=30
+add interface=ether3 name=ether3-vlan99 vlan-id=99
+add interface=ether4 name=ether4-vlan10 vlan-id=10
+add interface=ether4 name=ether4-vlan20 vlan-id=20
+add interface=ether4 name=ether4-vlan30 vlan-id=30
+add interface=ether4 name=ether4-vlan40 vlan-id=40
+add interface=ether4 name=ether4-vlan99 vlan-id=99
+add interface=ether5 name=ether5-vlan30 vlan-id=30
+add interface=ether5 name=ether5-vlan40 vlan-id=40
+add interface=ether5 name=ether5-vlan99 vlan-id=99
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether3-vlan10
+add bridge=bridge-vlan10 interface=ether4-vlan10
+add bridge=bridge-vlan20 interface=ether3-vlan20
+add bridge=bridge-vlan20 interface=ether4-vlan20
+add bridge=bridge-vlan30 interface=ether3-vlan30
+add bridge=bridge-vlan30 interface=ether4-vlan30
+add bridge=bridge-vlan30 interface=ether5-vlan30
+add bridge=bridge-vlan40 interface=ether4-vlan40
+add bridge=bridge-vlan40 interface=ether5-vlan40
+add bridge=bridge-vlan99 interface=ether3-vlan99
+add bridge=bridge-vlan99 interface=ether4-vlan99
+add bridge=bridge-vlan99 interface=ether5-vlan99</code></pre></div>
+<p>Jangan lupa untuk konfigurasi IP address serta DHCP server di Core-JKT adalah sebagai berikut</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/ip address
+add address=192.168.10.1/24 interface=bridge-vlan10 network=192.168.10.0
+add address=192.168.20.1/24 interface=bridge-vlan20 network=192.168.20.0
+add address=192.168.30.1/24 interface=bridge-vlan30 network=192.168.30.0
+add address=192.168.40.1/24 interface=bridge-vlan40 network=192.168.40.0
+add address=192.168.99.1/24 interface=bridge-vlan99 network=192.168.99.0
+/ip pool
+add name=dhcp_pool_vlan_10 ranges=192.168.10.10-192.168.10.254
+add name=dhcp_pool_vlan_20 ranges=192.168.20.10-192.168.20.254
+add name=dhcp_pool_vlan_30 ranges=192.168.30.10-192.168.30.254
+add name=dhcp_pool_vlan_40 ranges=192.168.40.10-192.168.40.254
+/ip dhcp-server
+add address-pool=dhcp_pool_vlan_10 disabled=no interface=bridge-vlan10 name=dhcp_vlan_10
+add address-pool=dhcp_pool_vlan_20 disabled=no interface=bridge-vlan20 name=dhcp_vlan_20
+add address-pool=dhcp_pool_vlan_30 disabled=no interface=bridge-vlan30 name=dhcp_vlan_30
+add address-pool=dhcp_pool_vlan_40 disabled=no interface=bridge-vlan40 name=dhcp_vlan_40
+/ip dhcp-server network
+add address=192.168.10.0/24 gateway=192.168.10.1 dns-server=8.8.8.8
+add address=192.168.20.0/24 gateway=192.168.20.1 dns-server=8.8.8.8
+add address=192.168.30.0/24 gateway=192.168.30.1 dns-server=8.8.8.8
+add address=192.168.40.0/24 gateway=192.168.40.1 dns-server=8.8.8.8</code></pre></div>
+<h1 id="r-l1">R-L1</h1>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_r-l1.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_r-l1.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Untuk R-L1 dapat kita lihat dari diagram diatas, bahwa untuk R-L1 perlu memiliki konfigurasi untuk 4 VLAN yakni VLAN 10, 20, 30 dan 99 dan untuk dapat berkomunikasi dengan pusat Core-JKT, jalan satu satunya adalah melalui interface ether1 sehingga kita perlu membuat semua konfigurasi vlan di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing sebagai berikut:</p>
+
+<div style="overflow-x: auto;">
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td valign="top" align="center"><strong>Bridge</strong>
+<ul>
+    <li><strong><span style="color: #0000ff;">bridge-vlan10</span></strong></li>
+    <li><strong><span style="color: #008000;">bridge-vlan20</span></strong></li>
+    <li><strong><span style="color: #ff9900;">bridge-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">bridge-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether1</strong>
+<ul>
+    <li><strong><span style="color: #0000ff;">ether1-vlan10</span></strong></li>
+    <li><strong><span style="color: #008000;">ether1-vlan20</span></strong></li>
+    <li><strong><span style="color: #ff9900;">ether1-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">ether1-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan10 vlan-id=10
+add interface=ether1 name=ether1-vlan20 vlan-id=20
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether1-vlan10
+add bridge=bridge-vlan20 interface=ether1-vlan20
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99</code></pre></div>
+<p>Selanjutnya adalah konfigurasi ether2, ether3 dan ether4 dimana sesuai dengan topologi dari soal:</p>
+
+<ul>
+<li>ether2 adalah bagian dari VLAN 10</li>
+<li>ether3 adalah bagian dari VLAN 20</li>
+<li>ether4 adalah bagian dari VLAN 30</li>
+</ul>
+
+<p>Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge port
+add bridge=bridge-vlan10 interface=ether2
+add bridge=bridge-vlan20 interface=ether3
+add bridge=bridge-vlan30 interface=ether4</code></pre></div>
+<p>Jangan lupa juga untuk konfigurasi R-L1 management IP addresss serta default route supaya dapat terhubung ke internet</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/ip address
+add address=192.168.99.2/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1</code></pre></div>
+<h1 id="r-l2-1">R-L2-1</h1>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_r-l2-1.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_r-l2-1.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Untuk R-L2-1 dapat kita lihat dari diagram diatas, bahwa untuk R-L2-1 perlu memiliki konfigurasi untuk ke 5 VLAN meskipun host yang terhubung secara langsung ke R-L2-1 hanya masuk kedalam VLAN 10 dan 20. Namun, R-L2-1 menjadi transit dari VLAN yang berada di R-L2-2 untuk dapat berkomunikasi dengan pusat di Core-JKT, Maka dari itu ether3 sebagai penghubung dari R-L2-2 ke R-L2-1, harus memiliki konfigurasi VLAN yang berada di R-L2-2. Sedangkan supaya R-L2-1 dapat berkomunikasi dengan pusat Core-JKT, semua VLAN akan melalui ether1, sehingga kita perlu membuat semua konfigurasi VLAN di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing. Perencanaanya adalah sebagai berikut:</p>
+
+<div style="overflow-x: auto;">
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td valign="top" align="center"><strong>Bridge</strong>
+<ul>
+    <li><strong><span style="color: #0000ff;">bridge-vlan10</span></strong></li>
+    <li><strong><span style="color: #008000;">bridge-vlan20</span></strong></li>
+    <li><strong><span style="color: #ff9900;">bridge-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">bridge-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether1</strong>
+<ul>
+    <li><span style="color: #0000ff;"><strong>ether1-vlan10</strong></span></li>
+    <li><span style="color: #008000;"><strong>ether1-vlan20</strong></span></li>
+    <li><span style="color: #ff9900;"><strong>ether1-vlan30</strong></span></li>
+    <li><span style="color: #ff00ff;"><strong>ether1-vlan40</strong></span></li>
+    <li><strong>ether1-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether3</strong>
+<ul>
+    <li><span style="color: #ff9900;"><strong>ether3-vlan30</strong></span></li>
+    <li><strong><span style="color: #ff00ff;">ether3-vlan40</span></strong></li>
+    <li><strong>ether3-vlan99</strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge
+add name bridge-vlan10
+add name bridge-vlan20
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan10 vlan-id=10
+add interface=ether1 name=ether1-vlan20 vlan-id=20
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+add interface=ether3 name=ether3-vlan30 vlan-id=30 
+add interface=ether3 name=ether3-vlan40 vlan-id=40 
+add interface=ether3 name=ether3-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan10 interface=ether1-vlan10
+add bridge=bridge-vlan20 interface=ether1-vlan20
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99
+add bridge=bridge-vlan30 interface=ether3-vlan30 
+add bridge=bridge-vlan40 interface=ether3-vlan40 
+add bridge=bridge-vlan99 interface=ether3-vlan99</code></pre></div>
+<p>Selanjutnya adalah konfigurasi ether2 dan ether3 dimana sesuai dengan topologi dari soal:</p>
+
+<ul>
+<li>ether2 adalah bagian dari VLAN 10</li>
+<li>ether3 adalah bagian dari VLAN 20</li>
+</ul>
+
+<p>Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge port
+add bridge=bridge-vlan10 interface=ether2
+add bridge=bridge-vlan20 interface=ether3</code></pre></div>
+<p>Jangan lupa juga untuk konfigurasi R-L2-1 management IP addresss serta default route supaya dapat terhubung ke internet</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/ip address
+add address=192.168.99.3/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1</code></pre></div>
+<h1 id="r2-l2-2">R2-L2-2</h1>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_r-l2-2.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_r-l2-2.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Seperti yang kita lihat dari diagram diatas, bahwa untuk R-L2-2 perlu memiliki konfigurasi untuk 3 VLAN yakni VLAN 30, 40 dan 99 dan untuk dapat berkomunikasi dengan Core-JKT melalui R-L2-1, jalan yang ditempuh adalah melalui interface ether1 sehingga kita perlu membuat semua konfigurasi vlan di ether1 yang nantinya perlu dihubungkan ke bridgenya masing-masing sebagai berikut:</p>
+
+<div style="overflow-x: auto;">
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td valign="top" align="center"><strong>Bridge</strong>
+<ul>
+    <li><strong><span style="color: #ff9900;">bridge-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">bridge-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+<td valign="top" align="center"><strong>ether1</strong>
+<ul>
+    <li><strong><span style="color: #ff9900;">ether1-vlan30</span></strong></li>
+    <li><strong><span style="color: #ff00ff;">ether1-vlan40</span></strong></li>
+    <li><strong>bridge-vlan99</strong></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>Dengan perencanaan diatas, berikut konfigurasi yang dapat kita gunakan.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge
+add name bridge-vlan30
+add name bridge-vlan40
+add name bridge-vlan99
+ 
+/interface vlan
+add interface=ether1 name=ether1-vlan30 vlan-id=30
+add interface=ether1 name=ether1-vlan40 vlan-id=40
+add interface=ether1 name=ether1-vlan99 vlan-id=99
+ 
+/interface bridge port
+add bridge=bridge-vlan30 interface=ether1-vlan30
+add bridge=bridge-vlan40 interface=ether1-vlan40
+add bridge=bridge-vlan99 interface=ether1-vlan99</code></pre></div>
+<p>Selanjutnya adalah konfigurasi ether2 dan ether3 dimana sesuai dengan topologi dari soal:</p>
+
+<ul>
+<li>ether2 adalah bagian dari VLAN 30</li>
+<li>ether3 adalah bagian dari VLAN 40</li>
+</ul>
+
+<p>Hal ini dapat dengan mudah dilakukan dengan memasukkan tiap interface kedalam keanggotaan port dari bridge sesuai dengan VLAN yang seharusnya berjalan di port tersebut, hal ini sama analoginya dengan konfigurasi access port (port dengan untagged vlan tertentu).</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/interface bridge port
+add bridge=bridge-vlan30 interface=ether2
+add bridge=bridge-vlan40 interface=ether3</code></pre></div>
+<p>Jangan lupa juga untuk konfigurasi R-L2-2 management IP addresss serta default route supaya dapat terhubung ke internet</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/ip address
+add address=192.168.99.4/24 interface=bridge-vlan99 network=192.168.99.0
+ 
+/ip route
+add distance=1 gateway=192.168.99.1</code></pre></div>
+<h1 id="r-l3">R-L3</h1>
+
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="idn_networking_2017_mikrotik_r-l3.png" />
+    </div>
+    <a href="idn_networking_2017_mikrotik_r-l3.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+
+<p>Untuk R-L3 memiliki konfigurasi yang sama dengan R-L2-2, sehingga konfigurasi R-L2-2 untuk bridging dan VLAN dapat diaplikasikan ke R-L3. Namun, untuk konfigurasi IP management harus kita sesuaikan, yakni:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">/ip address 
+add address=192.168.99.5/24 interface=bridge-vlan99 network=192.168.99.0 
+ 
+/ip route 
+add distance=1 gateway=192.168.99.1</code></pre></div>
+<p>Selanjutnya untuk tahap verifikasi konfigurasi di atas kamu bisa baca di postingan selanjutnya <a href="http://www.riospace.web.id/idn-networking-competition-2017-mikrotik-bridging-challenge-solution-verification/">IDN Networking Competition 2017: Mikrotik Bridging Challenge Solution Verification</a>. Kalau ada pertanyaan atau kurang jelas, tolong jangan sungkan untuk meninggalkan pertanyaan melalui komentar. Terima kasih.</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Penulis</span>
+    <span class="item-content">Rio Maulana</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">Modifikasi Akhir</span>
+    <span class="item-content">2017-08-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">Lisensi</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="http://www.riospace.web.id/id/tags/idn/">idn</a>
+          <a href="http://www.riospace.web.id/id/tags/competition/">competition</a>
+          <a href="http://www.riospace.web.id/id/tags/mikrotik/">mikrotik</a>
+          <a href="http://www.riospace.web.id/id/tags/challenges/">challenges</a>
+          <a href="http://www.riospace.web.id/id/tags/routeros/">routeros</a>
+          <a href="http://www.riospace.web.id/id/tags/vlan/">vlan</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/id/mengurutkan-interface-pada-virtualisasi-router-mikrotik-di-qemu/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mengurutkan Interface Pada Virtualisasi Router Mikrotik Di Qemu</span>
+            <span class="prev-text nav-mobile">Postingan Sebelumnya</span>
+          </a>
+        
+          <a class="next" href="/id/bakso-moro-seneng-pak-slamet-trenggalek/">
+            <span class="next-text nav-default">Bakso Moro Seneng Pak Slamet Trenggalek</span>
+            <span class="prev-text nav-mobile">Postingan Selanjutnya</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  <div class="disqus-comment">
+  <div class="disqus-button" id="load_disqus" onclick="load_disqus()">
+    Show Disqus Comments
+  </div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    function load_disqus() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'riospace';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+
+      $('#load_disqus').remove();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:rimaulana@outlook.com" rel="me noopener" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/rim1910" rel="me noopener" class="iconfont icon-facebook"
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://www.linkedin.com/in/riomaulana/" rel="me noopener" class="iconfont icon-linkedin"
+        title="linkedin" target="_blank">
+      </a>
+      <a href="https://github.com/rimaulana" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://www.riospace.web.id/id/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2011 -
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Rio Maulana</span></span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+</body>
+</html>
